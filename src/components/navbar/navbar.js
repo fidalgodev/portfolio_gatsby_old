@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-scroll';
+import useDarkMode from 'use-dark-mode';
 
 import Img from 'gatsby-image';
 import NavItems from './navItems/navItems';
-import Contained from '../elements/contained/contained';
+import { Contained } from '../elements/styled';
+import DarkModeToggle from './darkModeToggle/darkModeToggle';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -16,6 +18,7 @@ const StyledHeader = styled.header`
   z-index: 20;
   background-color: var(--navbar);
   box-shadow: 0 0.5rem 2rem var(--shadow-color);
+  transition: all 0.2s ease-out;
 `;
 
 const Wrapper = styled.div`
@@ -31,7 +34,13 @@ const StyledNav = styled.nav`
   height: 100%;
 `;
 
-const Navbar = () => {
+const StyledLink = styled(Link)`
+  cursor: pointer;
+`;
+
+const Navbar = ({ showScrollUp, hideScrollTop }) => {
+  const darkMode = useDarkMode(false);
+
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { relativeDirectory: { eq: "logo" } }) {
@@ -58,16 +67,29 @@ const Navbar = () => {
     <StyledHeader>
       <Contained>
         <Wrapper>
-          <AnchorLink href="#header">
+          <StyledLink
+            to="header"
+            offset={-60}
+            spy={true}
+            smooth={true}
+            duration={500}
+            onSetActive={hideScrollTop}
+            onSetInactive={showScrollUp}
+          >
             <Img
               alt="Logo"
               title="Logo"
-              fixed={logos.dark.childImageSharp.fixed}
+              fixed={
+                darkMode.value
+                  ? logos.light.childImageSharp.fixed
+                  : logos.dark.childImageSharp.fixed
+              }
             />
-          </AnchorLink>
+          </StyledLink>
           <StyledNav>
             <NavItems />
           </StyledNav>
+          <DarkModeToggle darkMode={darkMode} />
         </Wrapper>
       </Contained>
     </StyledHeader>

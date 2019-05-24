@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { Link } from 'react-scroll';
 
-const Link = styled(AnchorLink)`
+const StyledLink = styled(Link)`
   text-decoration: none;
   font-family: inherit;
   font-weight: 700;
   text-transform: uppercase;
+  cursor: pointer;
   color: var(--text);
   padding: 1rem 2rem;
   font-size: 1.1rem;
@@ -15,17 +16,27 @@ const Link = styled(AnchorLink)`
   &:hover {
     color: var(--primary);
   }
+
+  &.active {
+    color: var(--primary);
+  }
 `;
 
 const NavItem = ({ link }) => (
-  <Link
-    href={`#${link
+  <StyledLink
+    to={`${link
       .split(' ')
       .join('-')
       .toLowerCase()}`}
+    activeClass="active"
+    spy={true}
+    offset={-55}
+    hashSpy={true}
+    smooth={true}
+    duration={500}
   >
     {link}
-  </Link>
+  </StyledLink>
 );
 
 export default NavItem;

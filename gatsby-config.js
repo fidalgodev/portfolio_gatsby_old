@@ -5,6 +5,7 @@ module.exports = {
     author: `Fidalgo`,
   },
   plugins: [
+    `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
@@ -16,6 +17,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

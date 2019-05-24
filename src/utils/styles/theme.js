@@ -9,9 +9,9 @@ const theme = {
       background: '#fff',
     },
     darkTheme: {
-      textDarkHighlight: '#BCBCBC',
+      text: '#BCBCBC',
       textHighlight: '#F0F0F0',
-      background: '#171717',
+      background: '#1D1D1D',
     },
   },
   mediaQueries: {

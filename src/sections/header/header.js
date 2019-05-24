@@ -1,22 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
+import {
+  Contained,
+  StyledSection,
+  Wrapper,
+} from '../../components/elements/styled';
 
 import BackgroundLogo from './backgroundLogo';
-
-const StyledSection = styled.section`
-  display: flex;
-  z-index: 8;
-  background-color: var(--background);
-  position: relative;
-  min-height: calc(100vh - 6rem);
-  width: 100%;
-`;
+import ScrollDown from '../../components/elements/scrollDown/scrollDown';
 
 const Header = () => {
   return (
-    <StyledSection>
+    <StyledSection fullHeight noMargin id="header">
       <BackgroundLogo />
-      Pedro
+      <Contained>
+        <Wrapper>
+          <h1>Intro here</h1>
+        </Wrapper>
+      </Contained>
+      <ScrollDown />
     </StyledSection>
   );
 };

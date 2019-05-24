@@ -6,16 +6,16 @@ import {
   Wrapper,
 } from '../../components/elements/styled';
 
-const About = () => {
+const Portfolio = () => {
   return (
-    <StyledSection fullHeight id="about-me">
+    <StyledSection fullHeight id="portfolio">
       <Contained>
         <Wrapper>
-          <h1>About me will be here</h1>
+          <h1>Portfolio here</h1>
         </Wrapper>
       </Contained>
     </StyledSection>
   );
 };
 
-export default About;
+export default Portfolio;

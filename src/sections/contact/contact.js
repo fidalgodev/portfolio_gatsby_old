@@ -6,16 +6,16 @@ import {
   Wrapper,
 } from '../../components/elements/styled';
 
-const About = () => {
+const Contact = () => {
   return (
-    <StyledSection fullHeight id="about-me">
+    <StyledSection fullHeight id="contact">
       <Contained>
         <Wrapper>
-          <h1>About me will be here</h1>
+          <h1>Contact me here</h1>
         </Wrapper>
       </Contained>
     </StyledSection>
   );
 };
 
-export default About;
+export default Contact;

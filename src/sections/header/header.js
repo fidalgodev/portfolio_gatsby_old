@@ -37,7 +37,7 @@ const SubTitle = styled.h2`
   font-weight: 300;
   margin: 0;
   margin-bottom: 7rem;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   transition: color 0.2s ease-out;
 
   & span {

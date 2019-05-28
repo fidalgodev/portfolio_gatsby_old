@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Contained = styled.div`
   max-width: 124rem;
   z-index: 2;
-  padding: 0 2rem;
+  padding: 0 4rem;
   margin: 0 auto;
   width: 100%;
 `;
@@ -24,6 +24,6 @@ export const StyledSection = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  padding: 4rem 2rem;
+  padding: 8rem 0rem;
   color: var(--text);
 `;

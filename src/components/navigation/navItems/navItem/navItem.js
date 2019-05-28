@@ -22,8 +22,9 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const NavItem = ({ link }) => (
+const NavItem = ({ link, clicked }) => (
   <StyledLink
+    onClick={clicked}
     to={`${link
       .split(' ')
       .join('-')

@@ -30,7 +30,7 @@ const BackgroundLogo = () => {
       file(relativePath: { eq: "logo_background.png" }) {
         childImageSharp {
           fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid_tracedSVG
+            ...GatsbyImageSharpFluid
           }
         }
       }

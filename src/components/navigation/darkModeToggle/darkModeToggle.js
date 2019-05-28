@@ -1,18 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import useDarkMode from 'use-dark-mode';
 
 const Wrapper = styled.div`
   display: flex;
-  margin-right: 2rem;
+  transform: ${({ mobile }) => (mobile ? 'scale(0.6)' : 'scale(0.7)')};
+  margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
   position: absolute;
-  right: 0;
+  right: ${({ mobile }) => (mobile ? null : '0')};
+  bottom: ${({ mobile }) => (mobile ? '2rem' : null)};
 
   & input {
     position: absolute;
     right: -999rem;
 
     &:checked + .toggle {
-      background-color: #749dd6;
+      background-color: #16537b;
 
       & .toggle__handler {
         background-color: #ffe5b5;
@@ -65,7 +68,7 @@ const Label = styled.label`
   position: relative;
   width: 50px;
   height: 26px;
-  background-color: #83d8ff;
+  background-color: #7dbcd2;
   border-radius: 90px;
   transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
@@ -179,16 +182,17 @@ const Span = styled.span`
   }
 `;
 
-const darkModeToggle = ({ darkMode }) => {
+const darkModeToggle = ({ mobile }) => {
+  const darkMode = useDarkMode(false);
   return (
-    <Wrapper>
+    <Wrapper mobile={mobile}>
       <input
         type="checkbox"
         id="dn"
         checked={darkMode.value}
         onChange={darkMode.toggle}
       />
-      <Label for="dn" className="toggle">
+      <Label htmlFor="dn" className="toggle">
         <Span className="toggle__handler">
           <span className="crater crater--1" />
           <span className="crater crater--2" />

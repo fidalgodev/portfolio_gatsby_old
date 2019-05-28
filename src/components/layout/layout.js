@@ -7,7 +7,7 @@ import GlobalStyles from '../../utils/styles/global';
 import theme from '../../utils/styles/theme';
 
 import ScrollToTop from '../elements/scrollToTop/scrollToTop';
-import Navbar from '../navbar/Navbar';
+import Navbar from '../navigation/navbar/navbar';
 import Footer from '../footer/footer';
 
 const Wrapper = styled.div`

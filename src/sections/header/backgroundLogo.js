@@ -17,7 +17,7 @@ const StyledImage = styled(Img)`
   position: absolute !important;
   user-select: none;
   top: -30%;
-  opacity: 0.6;
+  opacity: 0.5;
   right: -10%;
   width: 55%;
   max-width: 100%;

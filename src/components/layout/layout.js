@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  background-color: var(--background);
+  background: var(--background);
   color: var(--text);
   transition: color 0.2s ease-out, background 0.2s ease-out;
 `;

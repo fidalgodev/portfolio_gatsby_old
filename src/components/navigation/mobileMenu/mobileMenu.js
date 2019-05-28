@@ -10,10 +10,11 @@ const BackgroundWrapper = styled.div`
   z-index: -1;
   top: 0;
   left: 0;
-  background-color: var(--background);
+  background: var(--background);
   width: 100%;
   height: 100vh;
   display: flex;
+  transition: background 0.2s ease-out;
 `;
 
 const Wrapper = styled.div`

@@ -11,7 +11,7 @@ const StyledLink = styled(Link)`
   color: var(--text);
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  transition: all 0.2s;
+  transition: color 0.2s ease-out;
 
   &:hover {
     color: var(--primary);

@@ -37,14 +37,14 @@ export default createGlobalStyle`
       --primary-light: ${props => props.theme.colors.light};
       --primary-lighter: ${props => props.theme.colors.lighter};
       --white: #fff;
+      --shadow-btn: rgba(14, 129, 183, .25);
       --shadow-color: rgba(0, 0, 0, 0.05);
       --shadow-color-dark: rgba(0, 0, 0, 0.2);
 
       &.light-mode {
       --navbar: rgba(255, 255, 255, 0.8);
       --text: ${props => props.theme.colors.lightTheme.text};
-      --text-Hightlight: ${props =>
-        props.theme.colors.lightTheme.textHighlight};
+      --text-highlight: ${props => props.theme.colors.lightTheme.textHighlight};
       --background: ${props => props.theme.colors.lightTheme.background};
       --footer:  ${props => props.theme.colors.main};
       }
@@ -52,7 +52,7 @@ export default createGlobalStyle`
       &.dark-mode {
         --navbar: rgba(23, 23, 23, 0.8);
         --text: ${props => props.theme.colors.darkTheme.text};
-        --text-Hightlight: ${props =>
+        --text-highlight: ${props =>
           props.theme.colors.darkTheme.textHighlight};
         --background: ${props => props.theme.colors.darkTheme.background};
         --footer:  #1F1F1F;

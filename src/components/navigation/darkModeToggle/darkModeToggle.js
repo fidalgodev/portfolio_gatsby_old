@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     right: -999rem;
 
     &:checked + .toggle {
-      background-color: #16537b;
+      background-color: #0a7eb8;
 
       & .toggle__handler {
         background-color: #ffe5b5;
@@ -68,7 +68,7 @@ const Label = styled.label`
   position: relative;
   width: 50px;
   height: 26px;
-  background-color: #7dbcd2;
+  background-color: #2196af;
   border-radius: 90px;
   transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 

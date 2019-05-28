@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Contained = styled.div`
   max-width: 124rem;
+  z-index: 2;
   padding: 0 2rem;
   margin: 0 auto;
   width: 100%;

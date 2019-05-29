@@ -28,7 +28,18 @@ module.exports = {
         fonts: [
           {
             family: `Montserrat`,
-            variants: [`100`, `200`, `300`, `400`, `400i`, `500`, `600`, `700`],
+            variants: [
+              `100`,
+              `200`,
+              `300`,
+              `400`,
+              `400i`,
+              `500`,
+              `500i`,
+              `600`,
+              `600i`,
+              `700`,
+            ],
           },
         ],
       },
@@ -49,7 +60,6 @@ module.exports = {
         ],
       },
     },
-
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

@@ -6,10 +6,11 @@ const StyledButton = styled.button`
   background: var(--primary);
   color: var(--white);
   text-transform: uppercase;
+  font-family: inherit;
   font-weight: 700;
   border: 1px transparent;
   border-radius: 10rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 1.2rem 4.5rem;
   margin: 0rem;
   cursor: pointer;
@@ -27,10 +28,8 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ children, solid, ...rest }) => (
-  <StyledButton solid={solid} {...rest}>
-    {children}
-  </StyledButton>
+const Button = ({ children, ...rest }) => (
+  <StyledButton {...rest}>{children}</StyledButton>
 );
 
 export default Button;

@@ -6,16 +6,15 @@ const Wrapper = styled.div`
   display: flex;
   transform: ${({ mobile }) => (mobile ? 'scale(0.6)' : 'scale(0.7)')};
   margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
-  position: absolute;
+  position: ${({ mobile }) => (mobile ? 'relative' : 'absolute')};
   right: ${({ mobile }) => (mobile ? null : '0')};
-  bottom: ${({ mobile }) => (mobile ? '2rem' : null)};
 
   & input {
     position: absolute;
     right: -999rem;
 
     &:checked + .toggle {
-      background-color: #0a7eb8;
+      background-color: var(--primary);
 
       & .toggle__handler {
         background-color: #ffe5b5;
@@ -68,7 +67,7 @@ const Label = styled.label`
   position: relative;
   width: 50px;
   height: 26px;
-  background-color: #2196af;
+  background-color: var(--primary-lighter);
   border-radius: 90px;
   transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 

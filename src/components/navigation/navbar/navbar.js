@@ -40,6 +40,7 @@ const StyledLink = styled(Link)`
 const Navbar = ({ showScrollUp, hideScrollTop }) => {
   const darkMode = useDarkMode(false);
   const [isMobile, setisMobile] = useState(null);
+  const [menuOpened, setMenuOpened] = useState(false);
 
   // Change navbar content accordingly
   const changeMobile = () => {
@@ -87,6 +88,7 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
             duration={500}
             onSetActive={hideScrollTop}
             onSetInactive={showScrollUp}
+            onClick={() => setMenuOpened(false)}
           >
             {darkMode.value ? (
               <StyledLogo
@@ -102,7 +104,11 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
               />
             )}
           </StyledLink>
-          {isMobile ? <MobileMenu /> : <DesktopMenu />}
+          {isMobile ? (
+            <MobileMenu menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
+          ) : (
+            <DesktopMenu />
+          )}
         </Wrapper>
       </Contained>
     </StyledHeader>

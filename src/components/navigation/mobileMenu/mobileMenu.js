@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import NavItems from '../navItems/navItems';
@@ -22,15 +22,12 @@ const Wrapper = styled.div`
   position: relative;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   margin-top: 6rem;
   padding: 2rem 1rem;
 `;
 
-const MobileMenu = () => {
-  const [menuOpened, setMenuOpened] = useState(false);
-
+const MobileMenu = ({ menuOpened, setMenuOpened }) => {
   return (
     <>
       <HamburgerToggler

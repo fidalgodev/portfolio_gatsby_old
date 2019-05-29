@@ -42,7 +42,7 @@ export default createGlobalStyle`
       --shadow-color-dark: rgba(0, 0, 0, 0.2);
 
       &.light-mode {
-      --navbar: rgba(255, 255, 255, 0.8);
+      --navbar: rgba(255, 255, 255, 0.9);
       --text: ${props => props.theme.colors.lightTheme.text};
       --text-highlight: ${props => props.theme.colors.lightTheme.textHighlight};
       --background: ${props => props.theme.colors.lightTheme.background};
@@ -50,7 +50,7 @@ export default createGlobalStyle`
       }
 
       &.dark-mode {
-        --navbar: rgba(23, 23, 23, 0.8);
+        --navbar: rgba(23, 23, 23, 0.9);
         --text: ${props => props.theme.colors.darkTheme.text};
         --text-highlight: ${props =>
           props.theme.colors.darkTheme.textHighlight};

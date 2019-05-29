@@ -7,7 +7,9 @@ const LINKS = ['About me', 'Portfolio', 'Contact'];
 
 const StyledNav = styled.nav`
   display: flex;
+  flex: 1;
   flex-direction: ${({ mobile }) => (mobile ? 'column' : 'row')};
+  justify-content: ${({ mobile }) => (mobile ? 'center' : 'flex-end')};
   align-items: center;
 
   @media ${({ theme }) => theme.mediaQueries.large} {
@@ -18,7 +20,7 @@ const StyledNav = styled.nav`
 const NavItems = ({ mobile, clicked }) => (
   <StyledNav mobile={mobile}>
     {LINKS.map(link => (
-      <NavItem link={link} clicked={clicked} />
+      <NavItem key={link} link={link} clicked={clicked} />
     ))}
   </StyledNav>
 );

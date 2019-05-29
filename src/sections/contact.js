@@ -4,7 +4,7 @@ import {
   Contained,
   StyledSection,
   Wrapper,
-} from '../../components/elements/styled';
+} from '../components/layout/elements';
 
 const Contact = () => {
   return (

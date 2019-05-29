@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import GlobalStyles from '../../utils/styles/global';
 import theme from '../../utils/styles/theme';
 
-import ScrollToTop from '../elements/scrollToTop/scrollToTop';
+import ScrollToTop from '../UI/scrollToTop/scrollToTop';
 import Navbar from '../navigation/navbar/navbar';
 import Footer from '../footer/footer';
 

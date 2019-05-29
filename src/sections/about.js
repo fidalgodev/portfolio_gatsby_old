@@ -3,13 +3,13 @@ import rehypeReact from 'rehype-react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import ScrollLink from '../../components/utils/scrollLink';
-import Heading from '../../components/elements/heading/heading';
+import ScrollLink from '../components/utils/scrollLink';
+import Heading from '../components/UI/heading/heading';
 import {
   Contained,
   StyledSection,
   Wrapper,
-} from '../../components/elements/styled';
+} from '../components/layout/elements';
 
 const AboutText = styled.div`
   color: var(--text);

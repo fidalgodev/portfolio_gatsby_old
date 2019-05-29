@@ -1,7 +1,7 @@
 import React from 'react';
 
 import NavItems from '../navItems/navItems';
-import DarkModeToggle from '../darkModeToggle/darkModeToggle';
+import DarkModeToggle from '../../UI/darkModeToggle/darkModeToggle';
 
 const DesktopMenu = () => {
   return (

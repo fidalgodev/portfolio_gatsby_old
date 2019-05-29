@@ -6,10 +6,10 @@ import {
   Contained,
   StyledSection,
   Wrapper,
-} from '../../components/elements/styled';
-import BackgroundLogo from './backgroundLogo';
-import ScrollDown from '../../components/elements/scrollDown/scrollDown';
-import Button from '../../components/elements/button/button';
+} from '../components/layout/elements';
+import BackgroundLogo from '../components/UI/backgroundLogo/backgroundLogo';
+import ScrollDown from '../components/UI/scrollDown/scrollDown';
+import Button from '../components/UI/button/button';
 
 const SmallWrapper = styled.div`
   width: 90%;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import NavItems from '../navItems/navItems';
 import HamburgerToggler from './hamburgerToggle/hamburgerToggle';
-import DarkModeToggle from '../darkModeToggle/darkModeToggle';
+import DarkModeToggle from '../../UI/darkModeToggle/darkModeToggle';
 
 const BackgroundWrapper = styled.div`
   position: fixed;

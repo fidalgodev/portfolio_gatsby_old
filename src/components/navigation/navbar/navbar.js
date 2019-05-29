@@ -6,7 +6,7 @@ import { Link } from 'react-scroll';
 import useDarkMode from 'use-dark-mode';
 
 import Img from 'gatsby-image';
-import { Contained } from '../../elements/styled';
+import { Contained } from '../../layout/elements';
 import DesktopMenu from '../desktopMenu/desktopMenu';
 import MobileMenu from '../mobileMenu/mobileMenu';
 

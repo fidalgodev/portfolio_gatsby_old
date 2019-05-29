@@ -4,10 +4,10 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/utils/seo';
 
 // Sections
-import Header from '../sections/header/header';
-import About from '../sections/about/about';
-import Portfolio from '../sections/portfolio/portfolio';
-import Contact from '../sections/contact/contact';
+import Header from '../sections/header';
+import About from '../sections/about';
+import Portfolio from '../sections/portfolio';
+import Contact from '../sections/contact';
 
 const IndexPage = () => (
   <Layout>

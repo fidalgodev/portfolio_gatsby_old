@@ -1,7 +1,9 @@
 import React from 'react';
+import rehypeReact from 'rehype-react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
+import ScrollLink from '../../components/utils/scrollLink';
 import Heading from '../../components/elements/heading/heading';
 import {
   Contained,
@@ -15,27 +17,8 @@ const AboutText = styled.div`
   font-size: 1.7rem;
   line-height: 2;
   width: 85%;
-  word-break: break-word;
   margin: 0 auto;
   text-align: center;
-
-  & strong {
-    color: var(--text-highlight);
-    position: relative;
-    font-weight: 600;
-
-    &:after {
-      content: '';
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      transform: rotate(-2deg);
-      background: var(--primary-light);
-    }
-  }
 
   & em {
     color: var(--text-highlight);
@@ -45,7 +28,7 @@ const AboutText = styled.div`
   & a {
     text-decoration: underline;
     color: var(--text-highlight);
-    font-weight: 500;
+    font-weight: 600;
     transition: color 0.2s ease-out;
 
     &:hover {
@@ -54,17 +37,41 @@ const AboutText = styled.div`
   }
 `;
 
+const CustomSpan = styled.span`
+  position: relative;
+  font-style: italic;
+  color: var(--text-highlight);
+  font-weight: 600;
+
+  &:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotate(-2deg);
+    background: var(--primary-light);
+  }
+`;
+
+// Takes custom components from markdown, and maps to my custom components
+const renderCustom = new rehypeReact({
+  createElement: React.createElement,
+  components: { 'scroll-link': ScrollLink, span: CustomSpan },
+}).Compiler;
+
 const About = () => {
   const { aboutMe } = useStaticQuery(graphql`
     query {
       aboutMe: file(relativePath: { eq: "aboutMe.md" }) {
         childMarkdownRemark {
-          html
+          htmlAst
         }
       }
     }
   `);
-  console.log(aboutMe);
 
   return (
     <StyledSection id="about-me">
@@ -74,11 +81,9 @@ const About = () => {
             title="About me"
             subtitle="If you’re <span>wondering</span> who the f*** am I…"
           />
-          <AboutText
-            dangerouslySetInnerHTML={{
-              __html: aboutMe.childMarkdownRemark.html,
-            }}
-          />
+          <AboutText>
+            {renderCustom(aboutMe.childMarkdownRemark.htmlAst)}
+          </AboutText>
         </Wrapper>
       </Contained>
     </StyledSection>

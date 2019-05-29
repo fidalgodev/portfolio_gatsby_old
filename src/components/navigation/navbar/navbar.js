@@ -82,7 +82,6 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
         <Wrapper isMobile={isMobile}>
           <StyledLink
             to="header"
-            offset={-60}
             spy={true}
             smooth={true}
             duration={500}

@@ -11,7 +11,6 @@ const ScrollLink = ({ to, children }) => (
     to={to}
     activeClass="active"
     spy={true}
-    offset={-55}
     hashSpy={true}
     smooth={true}
     duration={500}

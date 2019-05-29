@@ -63,13 +63,7 @@ const Header = () => {
             <SubTitle>
               A <span>self-taught</span> Front-end developer
             </SubTitle>
-            <Link
-              to="about-me"
-              offset={-60}
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
+            <Link to="about-me" spy={true} smooth={true} duration={500}>
               <Button>About me</Button>
             </Link>
           </SmallWrapper>

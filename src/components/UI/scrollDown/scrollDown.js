@@ -39,7 +39,6 @@ const ScrollDown = () => {
         to="about-me"
         activeClass="active"
         spy={true}
-        offset={-55}
         hashSpy={true}
         smooth={true}
         duration={500}

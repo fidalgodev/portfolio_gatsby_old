@@ -13,10 +13,8 @@ export const StyledSection = styled.section`
   position: relative;
   align-items: center;
   justify-content: center;
-  min-height: ${({ fullHeight }) =>
-    fullHeight ? 'calc(100vh - 6rem)' : '100%'};
+  min-height: ${({ fullHeight }) => (fullHeight ? '100vh' : '100%')};
   width: 100%;
-  margin-top: 6rem;
 
   &:last-of-type {
     margin-bottom: -4rem !important;
@@ -24,6 +22,11 @@ export const StyledSection = styled.section`
 `;
 
 export const Wrapper = styled.div`
-  padding: 8rem 0rem;
+  padding: 6rem 0rem;
+  margin-top: 7rem;
   color: var(--text);
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    margin-top: 6rem;
+  }
 `;

@@ -103,11 +103,11 @@ const PortfolioItem = ({ portfolio }) => {
           <Text dangerouslySetInnerHTML={{ __html: portfolio.html }} />
           <Stack>{stack}</Stack>
           <ButtonsWrapper>
-            <ButtonLink solid href={live} rel="noreferrer">
+            <ButtonLink target="_blank" solid href={live} rel="noreferrer">
               <StyledIcon icon={faLink} />
               Check live
             </ButtonLink>
-            <ButtonLink href={source} rel="noreferrer">
+            <ButtonLink target="_blank" href={source} rel="noreferrer">
               <StyledIcon icon={faGithub} />
               Source Code
             </ButtonLink>

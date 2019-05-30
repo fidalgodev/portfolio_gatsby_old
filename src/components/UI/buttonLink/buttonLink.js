@@ -36,7 +36,7 @@ const StyledLink = styled.a`
 `;
 
 const ButtonLink = ({ children, solid, ...rest }) => (
-  <StyledLink solid={solid} target="_blank" {...rest}>
+  <StyledLink solid={solid} {...rest}>
     {children}
   </StyledLink>
 );

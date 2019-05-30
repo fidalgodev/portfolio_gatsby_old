@@ -19,10 +19,12 @@ const AboutText = styled.div`
   width: 85%;
   margin: 0 auto;
   text-align: center;
+  transition: color 0.2s ease-out;
 
   & em {
     color: var(--text-highlight);
     font-weight: 600;
+    transition: color 0.2s ease-out;
   }
 
   & a {
@@ -62,6 +64,7 @@ const StackTitle = styled.h2`
   color: var(--text-highlight);
   margin-top: 5rem;
   font-size: 2rem;
+  transition: color 0.2s ease-out;
 `;
 
 const Stack = styled.p`
@@ -105,8 +108,8 @@ const About = () => {
           <AboutText>
             {renderCustom(aboutMe.childMarkdownRemark.htmlAst)}
             <StackTitle>
-              My current <CustomSpan>stack</CustomSpan>
-              of <CustomSpan>languages/technologies</CustomSpan> is:
+              My current <CustomSpan>stack</CustomSpan> of{' '}
+              <CustomSpan>languages/technologies</CustomSpan> is:
             </StackTitle>
             <Stack>{aboutMe.childMarkdownRemark.frontmatter.stack}</Stack>
           </AboutText>

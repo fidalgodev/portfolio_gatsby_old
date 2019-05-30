@@ -7,8 +7,8 @@ const StyledLink = styled(Link)`
   font-family: inherit;
   font-weight: 700;
   text-transform: uppercase;
-  cursor: pointer;
   color: var(--text);
+  cursor: pointer;
   padding: 1rem 2rem;
   font-size: 1.1rem;
   transition: color 0.2s ease-out;

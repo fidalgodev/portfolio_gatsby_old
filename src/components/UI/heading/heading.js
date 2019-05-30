@@ -13,6 +13,7 @@ const Title = styled.h1`
   color: var(--primary-light);
   text-transform: uppercase;
   font-weight: 700;
+  transition: color 0.2s ease-out;
 `;
 
 const SubTitle = styled.h2`

@@ -26,6 +26,7 @@ const Email = styled.a`
   font-weight: 600;
   text-decoration: none;
   margin-bottom: 4rem;
+  transition: color 0.2s ease-out;
 `;
 
 const SocialWrapper = styled.div`

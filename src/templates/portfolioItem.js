@@ -32,6 +32,7 @@ const Title = styled.h1`
   margin: 0;
   margin-bottom: 3rem;
   color: var(--white);
+  transition: color 0.2s ease-out;
 
   &:after {
     content: '';
@@ -61,6 +62,7 @@ const Text = styled.div`
   margin: 0;
   margin-bottom: 1rem;
   line-height: 1.8;
+  transition: color 0.2s ease-out;
 `;
 
 const Stack = styled.p`
@@ -70,6 +72,7 @@ const Stack = styled.p`
   margin: 0;
   margin-bottom: 4rem;
   font-size: 1.1rem;
+  transition: color 0.2s ease-out;
 `;
 
 const ButtonsWrapper = styled.div`

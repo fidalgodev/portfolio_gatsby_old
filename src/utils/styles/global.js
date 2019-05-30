@@ -33,13 +33,17 @@ export default createGlobalStyle`
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
-      background-color: var(--background);
       --primary: ${props => props.theme.colors.main};
       --primary-light: ${props => props.theme.colors.light};
       --primary-lighter: ${props => props.theme.colors.lighter};
+      --navbar: rgba(255, 255, 255, 0.95);
+      --text: ${props => props.theme.colors.lightTheme.text};
+      --text-highlight: ${props => props.theme.colors.lightTheme.textHighlight};
+      --background: ${props => props.theme.colors.lightTheme.background};
       --white: #fff;
       --shadow-btn: rgba(7, 49, 69, .1);
       --shadow-color: rgba(0, 0, 0, 0.1);
+      background-color: var(--background);
 
       &.light-mode {
       --navbar: rgba(255, 255, 255, 0.95);

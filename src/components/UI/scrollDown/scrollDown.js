@@ -16,7 +16,7 @@ const ScrollDownWrapper = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
 
   &:hover {
     transform: translate(-50%, -3px);

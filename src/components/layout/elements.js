@@ -26,6 +26,7 @@ export const Wrapper = styled.div`
   width: 100%;
   align-items: center;
   flex-direction: column;
+  transition: color 0.2s ease-out;
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     margin-top: 6rem;

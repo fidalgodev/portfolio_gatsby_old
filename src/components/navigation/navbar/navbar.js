@@ -16,9 +16,9 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   z-index: 20;
-  background-color: var(--navbar);
+  background: var(--navbar);
   box-shadow: 0 0.5rem 2rem var(--shadow-color);
-  transition: all 0.2s ease-out;
+  transition: background 0.2s ease-out;
 `;
 
 const Wrapper = styled.div`
@@ -49,6 +49,8 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
       : setisMobile(false);
   };
 
+  // Event listener on resize, so when it change we check o remove desktop menu/mobile menu
+  // Better than CSS media query because we dont keep both DOM nodes
   useEffect(() => {
     changeMobile();
     window.addEventListener('resize', changeMobile);

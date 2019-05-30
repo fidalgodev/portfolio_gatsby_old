@@ -19,7 +19,7 @@ const StyledWrapper = styled.div`
   background-color: var(--primary);
   box-shadow: 0px 8px 15px var(--shadow-color);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-out;
 
   &:hover {
     transform: translateY(-3px);

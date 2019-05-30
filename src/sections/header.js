@@ -34,7 +34,7 @@ const Title = styled.h1`
 
 const SubTitle = styled.h2`
   color: var(--text);
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
   margin-bottom: 7rem;
   font-size: 1.8rem;
@@ -56,7 +56,11 @@ const Header = () => {
         <Wrapper>
           <SmallWrapper>
             <Title>
-              Hello ✌🏼,
+              Hello{' '}
+              <span role="img" aria-label="Cool hand emoji">
+                ✌🏼
+              </span>
+              ,
               <br />
               I'm <span>Fidalgo</span>
             </Title>

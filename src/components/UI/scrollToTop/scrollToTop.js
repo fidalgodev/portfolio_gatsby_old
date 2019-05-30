@@ -17,7 +17,7 @@ const StyledWrapper = styled.div`
   height: 3.5rem;
   border-radius: 50%;
   background-color: var(--primary);
-  box-shadow: 0 0.5rem 2rem var(--shadow-color);
+  box-shadow: 0px 8px 15px var(--shadow-color);
   cursor: pointer;
   transition: all 0.2s;
 

@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Navbar = ({ showScrollUp, hideScrollTop }) => {
-  const darkMode = useDarkMode();
+  const { value: darkMode } = useDarkMode(false);
   const [isMobile, setisMobile] = useState(null);
   const [menuOpened, setMenuOpened] = useState(false);
 
@@ -87,7 +87,7 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
             onSetInactive={showScrollUp}
             onClick={() => setMenuOpened(false)}
           >
-            {darkMode.value ? (
+            {darkMode ? (
               <StyledLogo
                 alt="Logo"
                 title="Logo"

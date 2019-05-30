@@ -11,6 +11,8 @@ import {
 import PortfolioItem from '../templates/portfolioItem';
 
 const PortfolioWrapper = styled.div`
+  width: 100%;
+
   & > div:nth-child(odd) > div {
     flex-direction: row-reverse;
   }

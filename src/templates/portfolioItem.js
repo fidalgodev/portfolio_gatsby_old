@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   &:not(:last-child) {
     margin-bottom: 10rem;
@@ -20,6 +21,7 @@ const Wrapper = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   align-items: flex-start;
+  width: 100%;
 `;
 
 const Title = styled.h1`
@@ -29,7 +31,7 @@ const Title = styled.h1`
   font-style: italic;
   margin: 0;
   margin-bottom: 3rem;
-  color: var(--text-highlight);
+  color: var(--white);
 
   &:after {
     content: '';
@@ -40,7 +42,7 @@ const Title = styled.h1`
     height: 100%;
     width: 100%;
     transform: rotate(-2deg);
-    background: var(--primary-light);
+    background: var(--primary);
   }
 `;
 
@@ -52,13 +54,13 @@ const Content = styled.div`
   margin-top: 1rem;
 `;
 
-const Text = styled.p`
-  font-size: 1.4rem;
+const Text = styled.div`
+  font-size: 1.6rem;
   color: var(--text);
   font-weight: 400;
   margin: 0;
   margin-bottom: 1rem;
-  line-height: 1.7;
+  line-height: 1.8;
 `;
 
 const Stack = styled.p`
@@ -98,11 +100,11 @@ const PortfolioItem = ({ portfolio }) => {
           <Text dangerouslySetInnerHTML={{ __html: portfolio.html }} />
           <Stack>{stack}</Stack>
           <ButtonsWrapper>
-            <ButtonLink solid href={live}>
+            <ButtonLink solid href={live} rel="noreferrer">
               <StyledIcon icon={faLink} />
               Check live
             </ButtonLink>
-            <ButtonLink href={source}>
+            <ButtonLink href={source} rel="noreferrer">
               <StyledIcon icon={faGithub} />
               Source Code
             </ButtonLink>

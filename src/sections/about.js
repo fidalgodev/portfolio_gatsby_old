@@ -15,7 +15,7 @@ const AboutText = styled.div`
   color: var(--text);
   font-weight: 400;
   font-size: 1.7rem;
-  line-height: 2;
+  line-height: 1.8;
   width: 85%;
   margin: 0 auto;
   text-align: center;
@@ -32,7 +32,7 @@ const AboutText = styled.div`
     transition: color 0.2s ease-out;
 
     &:hover {
-      color: var(--primary-light);
+      color: var(--primary);
     }
   }
 `;
@@ -40,10 +40,9 @@ const AboutText = styled.div`
 const CustomSpan = styled.span`
   position: relative;
   font-style: italic;
-  color: var(--text-highlight);
+  color: var(--white);
   font-weight: 600;
   box-decoration-break: clone;
-  background: var(--primary-light);
 
   &:after {
     content: '';
@@ -54,8 +53,25 @@ const CustomSpan = styled.span`
     height: 100%;
     width: 100%;
     transform: rotate(-2deg);
-    background: var(--primary-light);
+    background: var(--primary);
   }
+`;
+
+const StackTitle = styled.h2`
+  font-weight: 600;
+  color: var(--text-highlight);
+  margin-top: 5rem;
+  font-size: 2rem;
+`;
+
+const Stack = styled.p`
+  color: var(--primary-lighter);
+  width: 75%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-weight: 700;
 `;
 
 // Takes custom components from markdown, and maps to my custom components
@@ -69,6 +85,9 @@ const About = () => {
     query {
       aboutMe: file(relativePath: { eq: "aboutMe.md" }) {
         childMarkdownRemark {
+          frontmatter {
+            stack
+          }
           htmlAst
         }
       }
@@ -85,6 +104,11 @@ const About = () => {
           />
           <AboutText>
             {renderCustom(aboutMe.childMarkdownRemark.htmlAst)}
+            <StackTitle>
+              My current <CustomSpan>stack</CustomSpan>
+              of <CustomSpan>languages/technologies</CustomSpan> is:
+            </StackTitle>
+            <Stack>{aboutMe.childMarkdownRemark.frontmatter.stack}</Stack>
           </AboutText>
         </Wrapper>
       </Contained>

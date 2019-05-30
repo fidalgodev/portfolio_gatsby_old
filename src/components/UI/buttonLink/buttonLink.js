@@ -11,20 +11,21 @@ const StyledLink = styled.a`
   display: flex;
   align-items: center;
   font-weight: 700;
+  letter-spacing: 1.5px;
   border: ${({ solid }) => (solid ? '1px transparent' : '1px solid')};
   border-radius: 10rem;
   font-size: 1rem;
-  padding: 1rem 3.5rem;
+  padding: 1.4rem 3.5rem;
   margin: 0rem;
   cursor: pointer;
   box-shadow: ${({ solid }) =>
-    solid ? '0 5px 15px var(--shadow-btn)' : 'none'};
+    solid ? '0px 8px 15px var(--shadow-color)' : 'none'};
   transition: all 0.2s ease-out;
 
   &:hover {
     transform: translateY(-3px);
     box-shadow: ${({ solid }) =>
-      solid ? '0 6px 20px var(--shadow-btn)' : 'none'};
+      solid ? '0px 15px 20px var(--shadow-btn)' : 'none'};
   }
 
   &:active {

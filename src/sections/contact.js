@@ -19,18 +19,11 @@ import {
 } from '../components/layout/elements';
 import Heading from '../components/UI/heading/heading';
 
-const ContactWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-`;
-
 const Email = styled.a`
   color: var(--text-highlight);
   font-size: 2rem;
   position: relative;
-  font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   margin-bottom: 4rem;
 `;
@@ -73,19 +66,19 @@ const StyledIcon = styled(FontAwesomeIcon)`
 
 const LogoImage = styled(Img)`
   width: 15%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 `;
 
 const CopyRight = styled.p`
   font-weight: 700;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--text-highlight);
   text-transform: uppercase;
 `;
 
 const Contact = () => {
-  const darkMode = useDarkMode();
+  const { value: darkMode } = useDarkMode(false);
   const { darkLogo, lightLogo } = useStaticQuery(graphql`
     query {
       darkLogo: file(relativePath: { eq: "logo/logovertical_black.png" }) {
@@ -106,7 +99,7 @@ const Contact = () => {
   `);
 
   return (
-    <StyledSection id="contact">
+    <StyledSection fullHeight id="contact">
       <Contained>
         <Wrapper>
           <Heading
@@ -115,23 +108,23 @@ const Contact = () => {
           />
           <Email href="mailto:hello@fidalgo.dev">hello@fidalgo.dev</Email>
           <SocialWrapper>
-            <StyledLink>
+            <StyledLink rel="noreferrer">
               <StyledIcon icon={faGithub} />
             </StyledLink>
-            <StyledLink>
+            <StyledLink rel="noreferrer">
               <StyledIcon icon={faFacebookF} />
             </StyledLink>
-            <StyledLink>
+            <StyledLink rel="noreferrer">
               <StyledIcon icon={faLinkedinIn} />
             </StyledLink>
-            <StyledLink>
+            <StyledLink rel="noreferrer">
               <StyledIcon icon={faInstagram} />
             </StyledLink>
-            <StyledLink>
+            <StyledLink rel="noreferrer">
               <StyledIcon icon={faYoutube} />
             </StyledLink>
           </SocialWrapper>
-          {darkMode.value ? (
+          {darkMode ? (
             <LogoImage fluid={lightLogo.childImageSharp.fluid} />
           ) : (
             <LogoImage fluid={darkLogo.childImageSharp.fluid} />

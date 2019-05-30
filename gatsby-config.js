@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Fidalgo | Front End Developer`,
-    description: `Self Taught Front End Developer`,
+    title: `Fidalgo | Front-end Developer`,
+    description: `Self Taught Front-end Developer`,
     author: `Fidalgo`,
   },
   plugins: [
@@ -28,18 +28,7 @@ module.exports = {
         fonts: [
           {
             family: `Montserrat`,
-            variants: [
-              `100`,
-              `200`,
-              `300`,
-              `400`,
-              `400i`,
-              `500`,
-              `500i`,
-              `600`,
-              `600i`,
-              `700`,
-            ],
+            variants: [`200`, `400`, `400i`, `600`, `600i`, `700`],
           },
         ],
       },
@@ -54,7 +43,7 @@ module.exports = {
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
-              rel: 'nofollow',
+              rel: 'noreferrer',
             },
           },
         ],

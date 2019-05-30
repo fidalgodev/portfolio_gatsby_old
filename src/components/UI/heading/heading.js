@@ -10,7 +10,7 @@ const Title = styled.h1`
   font-size: 2.5rem;
   margin: 0;
   margin-bottom: 1rem;
-  color: var(--primary);
+  color: var(--primary-light);
   text-transform: uppercase;
   font-weight: 700;
 `;
@@ -19,7 +19,7 @@ const SubTitle = styled.h2`
   font-size: 2rem;
   margin: 0;
   color: var(--text);
-  font-weight: 300;
+  font-weight: 400;
   transition: color 0.2s ease-out;
 
   & span {

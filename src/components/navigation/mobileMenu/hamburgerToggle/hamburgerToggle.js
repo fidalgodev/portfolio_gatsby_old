@@ -119,6 +119,7 @@ const HamburgerToggler = ({ menuOpened, toggleChange }) => {
       <img
         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
         width="20px"
+        alt="Hamburguer Mobile Menu"
       />
     </StyledLabel>
   );

@@ -10,16 +10,17 @@ const StyledButton = styled.button`
   font-weight: 700;
   border: 1px transparent;
   border-radius: 10rem;
-  font-size: 1rem;
-  padding: 1.2rem 4.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 1.5px;
+  padding: 1.5rem 4rem;
   margin: 0rem;
   cursor: pointer;
-  box-shadow: 0 5px 15px var(--shadow-btn);
+  box-shadow: 0px 8px 15px var(--shadow-color);
   transition: all 0.2s ease-out;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px var(--shadow-btn);
+    box-shadow: 0px 15px 20px var(--shadow-btn);
   }
 
   &:active {

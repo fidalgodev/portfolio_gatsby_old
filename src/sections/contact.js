@@ -27,6 +27,18 @@ const Email = styled.a`
   text-decoration: none;
   margin-bottom: 4rem;
   transition: color 0.2s ease-out;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 1.8rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.7rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 1.4rem;
+  }
 `;
 
 const SocialWrapper = styled.div`
@@ -34,6 +46,14 @@ const SocialWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 10rem;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    margin-bottom: 8rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    margin-bottom: 6rem;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -53,6 +73,16 @@ const StyledLink = styled.a`
     background-color: var(--primary);
     border-color: var(--primary);
   }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -63,11 +93,23 @@ const StyledIcon = styled(FontAwesomeIcon)`
   ${StyledLink}:hover & {
     color: var(--background);
   }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 2rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.8rem;
+  }
 `;
 
 const LogoImage = styled(Img)`
   width: 15%;
   margin-bottom: 1.5rem;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    width: 25%;
+  }
 `;
 
 const CopyRight = styled.p`
@@ -100,7 +142,7 @@ const Contact = () => {
   `);
 
   return (
-    <StyledSection fullHeight id="contact">
+    <StyledSection id="contact">
       <Contained>
         <Wrapper>
           <Heading

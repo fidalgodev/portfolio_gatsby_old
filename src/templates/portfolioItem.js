@@ -16,12 +16,36 @@ const Wrapper = styled.div`
   &:not(:last-child) {
     margin-bottom: 10rem;
   }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    &:not(:last-child) {
+      margin-bottom: 8rem;
+    }
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    &:not(:last-child) {
+      margin-bottom: 6rem;
+    }
+  }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   width: 100%;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    flex-direction: column !important;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.4rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 1.3rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -33,6 +57,20 @@ const Title = styled.h1`
   margin-bottom: 3rem;
   color: var(--white);
   transition: color 0.2s ease-out;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 1.8rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
 
   &:after {
     content: '';
@@ -53,6 +91,12 @@ const Content = styled.div`
   flex-direction: column;
   margin: 0 2rem;
   margin-top: 1rem;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    order: 2;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Text = styled.div`
@@ -63,6 +107,18 @@ const Text = styled.div`
   margin-bottom: 1rem;
   line-height: 1.8;
   transition: color 0.2s ease-out;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 1.5rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.4rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smaller} {
+    font-size: 1.2rem;
+  }
 `;
 
 const Stack = styled.p`
@@ -73,6 +129,11 @@ const Stack = styled.p`
   margin-bottom: 4rem;
   font-size: 1.1rem;
   transition: color 0.2s ease-out;
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
 `;
 
 const ButtonsWrapper = styled.div`
@@ -80,6 +141,15 @@ const ButtonsWrapper = styled.div`
 
   & a:first-of-type {
     margin-right: 3rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    justify-content: space-around;
+    width: 100%;
+
+    & a:first-of-type {
+      margin-right: 0rem;
+    }
   }
 `;
 
@@ -91,6 +161,12 @@ const StyledIcon = styled(FontAwesomeIcon)`
 const Image = styled(Img)`
   margin: 0 2rem;
   flex: 1 1 50%;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    order: 1;
+    width: 100%;
+    margin: 0rem;
+  }
 `;
 
 const PortfolioItem = ({ portfolio }) => {

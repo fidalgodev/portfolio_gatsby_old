@@ -39,7 +39,7 @@ const Portfolio = () => {
                 stack
                 image {
                   childImageSharp {
-                    fluid(maxWidth: 600, quality: 50) {
+                    fluid(maxWidth: 800, quality: 75) {
                       ...GatsbyImageSharpFluid
                     }
                   }

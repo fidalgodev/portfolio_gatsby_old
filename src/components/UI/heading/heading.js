@@ -4,6 +4,14 @@ import styled from 'styled-components';
 const HeadingWrapper = styled.div`
   text-align: center;
   margin-bottom: 7rem;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    margin-bottom: 5rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    margin-bottom: 4.5rem;
+  }
 `;
 
 const Title = styled.h1`
@@ -14,6 +22,18 @@ const Title = styled.h1`
   text-transform: uppercase;
   font-weight: 700;
   transition: color 0.2s ease-out;
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 2rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smaller} {
+    font-size: 1.8rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 1.6rem;
+  }
 `;
 
 const SubTitle = styled.h2`
@@ -28,6 +48,18 @@ const SubTitle = styled.h2`
     font-style: italic;
     font-weight: 600;
     transition: color 0.2s ease-out;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.8rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smaller} {
+    font-size: 1.6rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 1.4rem;
   }
 `;
 

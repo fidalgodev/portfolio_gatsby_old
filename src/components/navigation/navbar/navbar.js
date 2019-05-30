@@ -10,6 +10,7 @@ import Logo from './logo/logo';
 const StyledHeader = styled.header`
   position: fixed;
   width: 100%;
+  max-width: 100vw;
   top: 0;
   left: 0;
   z-index: 20;

@@ -8,11 +8,16 @@ export default createGlobalStyle`
       box-sizing: border-box;
       overflow-y: scroll;
       line-height: 1.15;
+
       @media ${props => props.theme.mediaQueries.largest} {
-          font-size: 57.5%;
+          font-size: 60%;
       }
 
       @media ${props => props.theme.mediaQueries.large} {
+          font-size: 57.5%;
+      }
+
+      @media ${props => props.theme.mediaQueries.small} {
           font-size: 55%;
       }
     }

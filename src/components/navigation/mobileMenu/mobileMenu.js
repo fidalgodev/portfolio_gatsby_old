@@ -12,6 +12,7 @@ const BackgroundWrapper = styled.div`
   left: 0;
   background: var(--background);
   width: 100%;
+  max-width: 100vw;
   height: 100vh;
   display: flex;
   transition: background 0.2s ease-out;

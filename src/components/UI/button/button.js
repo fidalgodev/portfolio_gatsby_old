@@ -27,6 +27,15 @@ const StyledButton = styled.button`
     transform: translateY(1px);
     box-shadow: 0 3px 10px var(--shadow-btn);
   }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 1rem;
+    padding: 1.5rem 3.5rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    padding: 1.3rem 3.2rem;
+  }
 `;
 
 const Button = ({ children, ...rest }) => (

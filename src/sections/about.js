@@ -37,6 +37,21 @@ const AboutText = styled.div`
       color: var(--primary);
     }
   }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    width: 90%;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.3rem;
+    width: 95%;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    width: 100%;
+  }
 `;
 
 const CustomSpan = styled.span`
@@ -44,7 +59,9 @@ const CustomSpan = styled.span`
   font-style: italic;
   color: var(--white);
   font-weight: 600;
-  box-decoration-break: clone;
+  display: inline-block;
+  word-break: break-word;
+  white-space: normal;
 
   &:after {
     content: '';
@@ -65,16 +82,37 @@ const StackTitle = styled.h2`
   margin-top: 5rem;
   font-size: 2rem;
   transition: color 0.2s ease-out;
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 1.9rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    font-size: 1.4rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 1.3rem;
+  }
 `;
 
 const Stack = styled.p`
-  color: var(--primary-lighter);
+  color: var(--primary);
   width: 75%;
   margin: 0 auto;
   text-transform: uppercase;
   font-size: 1.3rem;
   line-height: 1.8;
   font-weight: 700;
+
+  @media ${props => props.theme.mediaQueries.small} {
+    width: 90%;
+    font-size: 1.1rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 1rem;
+  }
 `;
 
 // Takes custom components from markdown, and maps to my custom components

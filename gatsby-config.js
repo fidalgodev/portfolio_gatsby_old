@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: `Fidalgo | Front-end Developer`,
-    description: `Self Taught Front-end Developer`,
+    description: `I’m Fidalgo , a 23 years old self-taught Front-end developer , from Portugal .`,
     author: `Fidalgo`,
+    siteUrl: 'https://fidalgo.dev',
+    imageShare: `share.jpg`,
   },
   plugins: [
     `gatsby-plugin-use-dark-mode`,

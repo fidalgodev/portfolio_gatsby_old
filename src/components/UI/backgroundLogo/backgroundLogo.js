@@ -10,9 +10,41 @@ const StyledImage = styled(Img)`
   top: -30%;
   overflow: hidden;
   opacity: 0.5;
-  right: -10%;
+  right: -8%;
   width: 55%;
   transform: rotate(-15deg);
+
+  @media ${props => props.theme.mediaQueries.largest} {
+    top: -25%;
+  }
+
+  @media ${props => props.theme.mediaQueries.large} {
+    top: -15%;
+    right: -8%;
+    width: 70%;
+  }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    top: -10%;
+    width: 65%;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    top: 0%;
+    width: 65%;
+  }
+
+  @media ${props => props.theme.mediaQueries.smaller} {
+    top: 0%;
+    right: -12%;
+    width: 80%;
+  }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    top: 0%;
+    right: -12%;
+    width: 75%;
+  }
 `;
 
 const BackgroundLogo = () => {

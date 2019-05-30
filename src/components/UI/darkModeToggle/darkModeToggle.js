@@ -182,7 +182,7 @@ const Span = styled.span`
 `;
 
 const darkModeToggle = ({ mobile }) => {
-  const darkMode = useDarkMode(false);
+  const darkMode = useDarkMode();
   return (
     <Wrapper mobile={mobile}>
       <input

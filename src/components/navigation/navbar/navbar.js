@@ -38,7 +38,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Navbar = ({ showScrollUp, hideScrollTop }) => {
-  const darkMode = useDarkMode(false);
+  const darkMode = useDarkMode();
   const [isMobile, setisMobile] = useState(null);
   const [menuOpened, setMenuOpened] = useState(false);
 
@@ -58,7 +58,6 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
   const { darkLogo, lightLogo } = useStaticQuery(graphql`
     query {
       darkLogo: file(relativePath: { eq: "logo/logo_dark.png" }) {
-        name
         childImageSharp {
           fixed(height: 35) {
             ...GatsbyImageSharpFixed
@@ -66,7 +65,6 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
         }
       }
       lightLogo: file(relativePath: { eq: "logo/logo_light.png" }) {
-        name
         childImageSharp {
           fixed(height: 35) {
             ...GatsbyImageSharpFixed

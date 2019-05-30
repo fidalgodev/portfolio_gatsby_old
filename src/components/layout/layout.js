@@ -8,7 +8,6 @@ import theme from '../../utils/styles/theme';
 
 import ScrollToTop from '../UI/scrollToTop/scrollToTop';
 import Navbar from '../navigation/navbar/navbar';
-import Footer from '../footer/footer';
 
 const Wrapper = styled.div`
   display: flex;
@@ -28,7 +27,6 @@ const StyledMain = styled.main`
 
 const Layout = ({ children }) => {
   const [showScrollTop, setShowScrollTop] = useState(false);
-  console.log(showScrollTop);
 
   return (
     <ThemeProvider theme={theme}>
@@ -38,7 +36,6 @@ const Layout = ({ children }) => {
           hideScrollTop={() => setShowScrollTop(false)}
         />
         <StyledMain>{children}</StyledMain>
-        <Footer />
         {showScrollTop && <ScrollToTop />}
         <GlobalStyles />
       </Wrapper>

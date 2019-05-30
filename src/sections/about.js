@@ -42,6 +42,8 @@ const CustomSpan = styled.span`
   font-style: italic;
   color: var(--text-highlight);
   font-weight: 600;
+  box-decoration-break: clone;
+  background: var(--primary-light);
 
   &:after {
     content: '';

@@ -13,18 +13,19 @@ export const StyledSection = styled.section`
   position: relative;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-height: ${({ fullHeight }) => (fullHeight ? '100vh' : '100%')};
   width: 100%;
-
-  &:last-of-type {
-    margin-bottom: -4rem !important;
-  }
 `;
 
 export const Wrapper = styled.div`
   padding: 6rem 0rem;
   margin-top: 7rem;
   color: var(--text);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     margin-top: 6rem;

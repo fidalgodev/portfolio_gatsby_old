@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
-import useDarkMode from 'use-dark-mode';
 
-import Img from 'gatsby-image';
 import { Contained } from '../../layout/elements';
 import DesktopMenu from '../desktopMenu/desktopMenu';
 import MobileMenu from '../mobileMenu/mobileMenu';
+import Logo from './logo/logo';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -30,15 +27,7 @@ const Wrapper = styled.div`
   height: ${({ isMobile }) => (isMobile ? '6rem' : '7rem')};
 `;
 
-const StyledLogo = styled(Img)``;
-
-const StyledLink = styled(Link)`
-  cursor: pointer;
-  display: flex;
-`;
-
-const Navbar = ({ showScrollUp, hideScrollTop }) => {
-  const { value: darkMode } = useDarkMode(false);
+const Navbar = ({ notOnePageSection }) => {
   const [isMobile, setisMobile] = useState(null);
   const [menuOpened, setMenuOpened] = useState(false);
 
@@ -57,56 +46,22 @@ const Navbar = ({ showScrollUp, hideScrollTop }) => {
     return () => window.removeEventListener('resize', changeMobile);
   }, []);
 
-  const { darkLogo, lightLogo } = useStaticQuery(graphql`
-    query {
-      darkLogo: file(relativePath: { eq: "logo/logo_dark.png" }) {
-        childImageSharp {
-          fixed(height: 35) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      lightLogo: file(relativePath: { eq: "logo/logo_light.png" }) {
-        childImageSharp {
-          fixed(height: 35) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <StyledHeader>
       <Contained>
         <Wrapper isMobile={isMobile}>
-          <StyledLink
-            to="header"
-            spy={true}
-            smooth={true}
-            duration={500}
-            onSetActive={hideScrollTop}
-            onSetInactive={showScrollUp}
-            onClick={() => setMenuOpened(false)}
-          >
-            {darkMode ? (
-              <StyledLogo
-                alt="Logo"
-                title="Logo"
-                fixed={lightLogo.childImageSharp.fixed}
-              />
-            ) : (
-              <StyledLogo
-                alt="Logo"
-                title="Logo"
-                fixed={darkLogo.childImageSharp.fixed}
-              />
-            )}
-          </StyledLink>
+          <Logo
+            notOnePageSection={notOnePageSection}
+            setMenuOpened={setMenuOpened}
+          />
           {isMobile ? (
-            <MobileMenu menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
+            <MobileMenu
+              notOnePageSection={notOnePageSection}
+              menuOpened={menuOpened}
+              setMenuOpened={setMenuOpened}
+            />
           ) : (
-            <DesktopMenu />
+            <DesktopMenu notOnePageSection={notOnePageSection} />
           )}
         </Wrapper>
       </Contained>

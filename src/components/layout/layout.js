@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import GlobalStyles from '../../utils/styles/global';
 import theme from '../../utils/styles/theme';
 
-import ScrollToTop from '../UI/scrollToTop/scrollToTop';
 import Navbar from '../navigation/navbar/navbar';
 
 const Wrapper = styled.div`
@@ -25,18 +24,12 @@ const StyledMain = styled.main`
   flex: 1;
 `;
 
-const Layout = ({ children }) => {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
+const Layout = ({ notOnePageSection, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <Navbar
-          showScrollUp={() => setShowScrollTop(true)}
-          hideScrollTop={() => setShowScrollTop(false)}
-        />
+        <Navbar notOnePageSection={notOnePageSection} />
         <StyledMain>{children}</StyledMain>
-        {showScrollTop && <ScrollToTop />}
         <GlobalStyles />
       </Wrapper>
     </ThemeProvider>

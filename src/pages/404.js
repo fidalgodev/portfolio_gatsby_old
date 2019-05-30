@@ -38,6 +38,7 @@ const StyledLink = styled(Link)`
 
   &:active {
     transform: translateY(1px);
+  }
 `;
 
 const Svg = styled.img`
@@ -47,7 +48,7 @@ const Svg = styled.img`
 `;
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout notOnePageSection>
     <SEO title="404: Page not found" />
     <StyledSection fullHeight>
       <Contained>

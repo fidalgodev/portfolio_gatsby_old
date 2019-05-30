@@ -27,21 +27,21 @@ const Wrapper = styled.div`
   padding: 2rem 1rem;
 `;
 
-const MobileMenu = ({ menuOpened, setMenuOpened }) => {
-  return (
+const MobileMenu = ({ notOnePageSection, menuOpened, setMenuOpened }) => {
+  return notOnePageSection ? null : (
     <>
       <HamburgerToggler
         menuOpened={menuOpened}
         toggleChange={() => setMenuOpened(!menuOpened)}
       />
-      {menuOpened ? (
+      {menuOpened && (
         <BackgroundWrapper>
           <Wrapper>
             <NavItems mobile clicked={() => setMenuOpened(false)} />
             <DarkModeToggle mobile />
           </Wrapper>
         </BackgroundWrapper>
-      ) : null}
+      )}
     </>
   );
 };

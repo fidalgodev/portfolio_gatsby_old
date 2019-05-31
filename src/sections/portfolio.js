@@ -27,6 +27,7 @@ const Portfolio = () => {
           extension: { eq: "md" }
           relativeDirectory: { regex: "/portfolio/" }
         }
+        sort: { fields: [dir], order: DESC }
       ) {
         edges {
           node {
@@ -39,8 +40,8 @@ const Portfolio = () => {
                 stack
                 image {
                   childImageSharp {
-                    fluid(maxWidth: 800, quality: 75) {
-                      ...GatsbyImageSharpFluid
+                    fluid(maxWidth: 800, quality: 80) {
+                      ...GatsbyImageSharpFluid_tracedSVG
                     }
                   }
                 }

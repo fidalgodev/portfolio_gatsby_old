@@ -131,14 +131,14 @@ const Contact = () => {
     query {
       darkLogo: file(relativePath: { eq: "logo/logovertical_black.png" }) {
         childImageSharp {
-          fluid(maxWidth: 250) {
+          fluid(maxWidth: 250, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       lightLogo: file(relativePath: { eq: "logo/logovertical_white.png" }) {
         childImageSharp {
-          fluid(maxWidth: 250) {
+          fluid(maxWidth: 250, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }

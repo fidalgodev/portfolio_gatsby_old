@@ -19,7 +19,7 @@ const StyledLink = styled(Link)`
 
   @media ${({ theme }) => theme.mediaQueries.small} {
     margin: 1rem 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 `;
 

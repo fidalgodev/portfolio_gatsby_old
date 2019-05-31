@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   width: 100%;
 
   &:not(:last-child) {
-    margin-bottom: 10rem;
+    margin-bottom: 12rem;
   }
 
   @media ${props => props.theme.mediaQueries.medium} {
@@ -38,14 +38,6 @@ const ContentWrapper = styled.div`
   @media ${props => props.theme.mediaQueries.medium} {
     flex-direction: column !important;
   }
-
-  @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.4rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 1.3rem;
-  }
 `;
 
 const Title = styled.h1`
@@ -54,7 +46,7 @@ const Title = styled.h1`
   position: relative;
   font-style: italic;
   margin: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   color: var(--white);
   transition: color 0.2s ease-out;
 
@@ -90,7 +82,6 @@ const Content = styled.div`
   flex: 1 1 50%;
   flex-direction: column;
   margin: 0 2rem;
-  margin-top: 1rem;
 
   @media ${props => props.theme.mediaQueries.medium} {
     order: 2;
@@ -100,13 +91,24 @@ const Content = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: var(--text);
   font-weight: 400;
   margin: 0;
   margin-bottom: 1rem;
-  line-height: 1.8;
+  line-height: 1.7;
   transition: color 0.2s ease-out;
+
+  & a {
+    text-decoration: underline;
+    color: var(--text-highlight);
+    font-weight: 600;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
 
   @media ${props => props.theme.mediaQueries.medium} {
     font-size: 1.5rem;
@@ -114,10 +116,6 @@ const Text = styled.div`
 
   @media ${props => props.theme.mediaQueries.small} {
     font-size: 1.4rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.smaller} {
-    font-size: 1.2rem;
   }
 `;
 
@@ -181,11 +179,11 @@ const PortfolioItem = ({ portfolio }) => {
           <ButtonsWrapper>
             <ButtonLink target="_blank" solid href={live} rel="noreferrer">
               <StyledIcon icon={faLink} />
-              Check live
+              Visit
             </ButtonLink>
             <ButtonLink target="_blank" href={source} rel="noreferrer">
               <StyledIcon icon={faGithub} />
-              Source Code
+              Source
             </ButtonLink>
           </ButtonsWrapper>
         </Content>

@@ -29,14 +29,14 @@ const Logo = ({ notOnePageSection, setMenuOpened }) => {
     query {
       darkLogo: file(relativePath: { eq: "logo/logo_dark.png" }) {
         childImageSharp {
-          fixed(height: 35) {
+          fixed(height: 35, quality: 80) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       lightLogo: file(relativePath: { eq: "logo/logo_light.png" }) {
         childImageSharp {
-          fixed(height: 35) {
+          fixed(height: 35, quality: 80) {
             ...GatsbyImageSharpFixed
           }
         }

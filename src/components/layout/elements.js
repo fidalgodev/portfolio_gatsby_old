@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 // FIX FOR VH ON MOBILE
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-let vh = window.innerHeight * 0.01;
+let vh = typeof window !== 'undefined' && window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+typeof document !== 'undefined' &&
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 export const Contained = styled.div`
   max-width: 124rem;

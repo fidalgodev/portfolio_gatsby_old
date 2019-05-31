@@ -15,7 +15,7 @@ const StyledImage = styled(Img)`
   transform: rotate(-15deg);
 
   @media ${props => props.theme.mediaQueries.largest} {
-    top: -25%;
+    top: -30%;
   }
 
   @media ${props => props.theme.mediaQueries.large} {
@@ -52,7 +52,7 @@ const BackgroundLogo = () => {
     query {
       file(relativePath: { eq: "logo_background.png" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 1500) {
+          fluid(quality: 80, maxHeight: 1080) {
             ...GatsbyImageSharpFluid
           }
         }

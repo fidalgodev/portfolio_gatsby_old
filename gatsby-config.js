@@ -4,9 +4,16 @@ module.exports = {
     description: `I’m Fidalgo , a 23 years old self-taught Front-end developer , from Portugal .`,
     author: `Fidalgo`,
     siteUrl: 'https://fidalgo.dev',
+    // name of the image to share, should be in static folder
     imageShare: `share.jpg`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-141189217-1',
+      },
+    },
     `gatsby-plugin-use-dark-mode`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
@@ -51,20 +58,18 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-    //   },
-    // },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Fidalgo | Front-end Developer`,
+        short_name: `Fidalgo`,
+        icon: `src/images/icon.png`,
+        start_url: `/`,
+        background_color: `#212121`,
+        theme_color: `#127EB1`,
+        display: `minimal-ui`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };

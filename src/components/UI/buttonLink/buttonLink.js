@@ -15,7 +15,7 @@ const StyledLink = styled.a`
   border: ${({ solid }) => (solid ? '1px transparent' : '1px solid')};
   border-radius: 10rem;
   font-size: 1rem;
-  padding: 1.4rem 3.5rem;
+  padding: 1.2rem 2.8rem;
   margin: 0rem;
   cursor: pointer;
   box-shadow: ${({ solid }) =>
@@ -34,13 +34,9 @@ const StyledLink = styled.a`
       solid ? '0 3px 10px var(--shadow-btn)' : 'none'};
   }
 
-  @media ${props => props.theme.mediaQueries.medium} {
-    font-size: 1rem;
-    padding: 1.3rem 3.3rem;
-  }
-
   @media ${props => props.theme.mediaQueries.small} {
-    padding: 1.2rem 3rem;
+    font-size: 1rem;
+    padding: 1.1rem 2.6rem;
   }
 `;
 

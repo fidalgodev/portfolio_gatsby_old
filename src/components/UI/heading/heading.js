@@ -18,7 +18,7 @@ const Title = styled.h1`
   font-size: 2.5rem;
   margin: 0;
   margin-bottom: 1rem;
-  color: var(--primary-light);
+  color: var(--primary);
   text-transform: uppercase;
   font-weight: 700;
   transition: color 0.2s ease-out;
@@ -55,11 +55,11 @@ const SubTitle = styled.h2`
   }
 
   @media ${props => props.theme.mediaQueries.smaller} {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 `;
 

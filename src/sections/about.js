@@ -1,6 +1,8 @@
 import React from 'react';
 import rehypeReact from 'rehype-react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import ScrollLink from '../components/utils/scrollLink';
@@ -10,6 +12,7 @@ import {
   StyledSection,
   Wrapper,
 } from '../components/layout/elements';
+import ButtonLink from '../components/UI/buttonLink/buttonLink';
 
 const AboutText = styled.div`
   color: var(--text);
@@ -45,7 +48,7 @@ const AboutText = styled.div`
   }
 
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     width: 95%;
   }
 
@@ -101,6 +104,7 @@ const Stack = styled.p`
   width: 75%;
   margin: 0 auto;
   text-transform: uppercase;
+  margin-bottom: 5rem;
   font-size: 1.3rem;
   line-height: 1.8;
   font-weight: 700;
@@ -115,6 +119,11 @@ const Stack = styled.p`
   }
 `;
 
+const StyledIcon = styled(FontAwesomeIcon)`
+  color: inherit;
+  margin-right: 0.5rem;
+`;
+
 // Takes custom components from markdown, and maps to my custom components
 const renderCustom = new rehypeReact({
   createElement: React.createElement,
@@ -122,14 +131,20 @@ const renderCustom = new rehypeReact({
 }).Compiler;
 
 const About = () => {
-  const { aboutMe } = useStaticQuery(graphql`
+  const { aboutMe, siteUrl } = useStaticQuery(graphql`
     query {
       aboutMe: file(relativePath: { eq: "aboutMe.md" }) {
         childMarkdownRemark {
           frontmatter {
             stack
+            curriculum
           }
           htmlAst
+        }
+      }
+      siteUrl: site {
+        siteMetadata {
+          siteUrl
         }
       }
     }
@@ -151,6 +166,17 @@ const About = () => {
             </StackTitle>
             <Stack>{aboutMe.childMarkdownRemark.frontmatter.stack}</Stack>
           </AboutText>
+          <ButtonLink
+            solid
+            target="_blank"
+            rel="noreferrer"
+            href={`${siteUrl.siteMetadata.siteUrl}/${
+              aboutMe.childMarkdownRemark.frontmatter.curriculum
+            }`}
+          >
+            <StyledIcon icon={faPaperPlane} />
+            Curriculum
+          </ButtonLink>
         </Wrapper>
       </Contained>
     </StyledSection>

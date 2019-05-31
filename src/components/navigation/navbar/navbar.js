@@ -22,11 +22,15 @@ const StyledHeader = styled.header`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  position: relative;
-  overflow: auto;
+  overflow-x: hidden;
   justify-content: space-between;
   transition: all 0.2s ease-out;
+  user-select: none;
   height: ${({ isMobile }) => (isMobile ? '6rem' : '7rem')};
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    position: relative;
+  }
 `;
 
 const Navbar = ({ notOnePageSection }) => {

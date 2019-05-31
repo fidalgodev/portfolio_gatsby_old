@@ -10,11 +10,16 @@ const StyledLink = styled(Link)`
   color: var(--text);
   cursor: pointer;
   padding: 1rem 2rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: color 0.2s ease-out;
 
   &:hover {
     color: var(--primary);
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    margin: 1rem 0;
+    font-size: 1.3rem;
   }
 `;
 

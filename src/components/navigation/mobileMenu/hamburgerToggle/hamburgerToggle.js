@@ -7,7 +7,6 @@ const StyledLabel = styled.label`
   top: 50%;
   right: 0rem;
   transform: translate(-50%, -50%);
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   & img {
     display: block;

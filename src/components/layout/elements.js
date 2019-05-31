@@ -1,5 +1,11 @@
 import styled from 'styled-components';
 
+// FIX FOR VH ON MOBILE
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 export const Contained = styled.div`
   max-width: 124rem;
   z-index: 2;
@@ -17,16 +23,23 @@ export const Contained = styled.div`
 `;
 
 export const StyledSection = styled.section`
-  display: flex;
-  position: relative;
-  align-items: center;
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
-  justify-content: center;
-  flex-direction: column;
-  min-height: ${({ fullHeight }) => (fullHeight ? '100vh' : '100%')};
-  width: 100%;
-`;
+         display: flex;
+         position: relative;
+         align-items: center;
+         overflow-x: hidden !important;
+         overflow-y: hidden !important;
+         justify-content: center;
+         flex-direction: column;
+         height: ${({ fullHeight }) =>
+           fullHeight
+             ? '100vh'
+             : '100%'}; /* Fallback for browsers that do not support Custom Properties */
+         height: ${({ fullHeight }) =>
+           fullHeight ? 'calc(var(--vh, 1vh) * 100)' : '100%'};
+         /* min-height: ${({ fullHeight }) =>
+           fullHeight ? '100vh' : '100%'}; */
+         width: 100%;
+       `;
 
 export const Wrapper = styled.div`
   padding: 6rem 0rem;

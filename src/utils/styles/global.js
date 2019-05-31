@@ -23,6 +23,7 @@ export default createGlobalStyle`
     * {
       outline: none;
       box-sizing: inherit;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
     }
 
     *,
@@ -32,6 +33,10 @@ export default createGlobalStyle`
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    ::selection {
+        background: var(--primary-lighter); /* WebKit/Blink Browsers */
+      }
 
     body {
       font-family: 'Montserrat', sans-serif;

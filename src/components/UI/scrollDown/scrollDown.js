@@ -10,7 +10,7 @@ const ScrollDownWrapper = styled.div`
   height: 2rem;
   bottom: 0;
   left: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   transform: translate(-50%, 0);
   display: flex;
   align-items: center;

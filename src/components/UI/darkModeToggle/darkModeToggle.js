@@ -5,6 +5,7 @@ import useDarkMode from 'use-dark-mode';
 const Wrapper = styled.div`
   display: flex;
   transform: ${({ mobile }) => (mobile ? 'scale(0.6)' : 'scale(0.7)')};
+  margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
   margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
   position: ${({ mobile }) => (mobile ? 'relative' : 'absolute')};
   right: ${({ mobile }) => (mobile ? null : '0')};

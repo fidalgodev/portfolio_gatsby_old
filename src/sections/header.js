@@ -33,8 +33,8 @@ const Title = styled.h1`
     font-size: 4.5rem;
   }
 
-  @media ${props => props.theme.mediaQueries.smaller} {
-    font-size: 3.5rem;
+  @media ${props => props.theme.mediaQueries.smallest} {
+    font-size: 4rem;
   }
 
   & span {
@@ -56,11 +56,7 @@ const SubTitle = styled.h2`
     font-size: 1.7rem;
   }
 
-  @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.6rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.smaller} {
+  @media ${props => props.theme.mediaQueries.smallest} {
     font-size: 1.5rem;
   }
 
@@ -91,7 +87,13 @@ const Header = () => {
             <SubTitle>
               A <span>self-taught</span> Front-end developer
             </SubTitle>
-            <Link to="about-me" spy={true} smooth={true} duration={500}>
+            <Link
+              to="about-me"
+              spy={true}
+              hashSpy={true}
+              smooth={true}
+              duration={500}
+            >
               <Button>About me</Button>
             </Link>
           </SmallWrapper>

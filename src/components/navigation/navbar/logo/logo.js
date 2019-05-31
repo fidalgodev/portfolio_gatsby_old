@@ -68,9 +68,9 @@ const Logo = ({ notOnePageSection, setMenuOpened }) => {
     <>
       <StyledLink
         to="header"
-        spy={true}
         smooth={true}
         duration={500}
+        spy={true}
         // When header section is active, hide scroll to top When inactive, show scroll to top
         onSetActive={() => setShowScrollTop(false)}
         onSetInactive={() => setShowScrollTop(true)}

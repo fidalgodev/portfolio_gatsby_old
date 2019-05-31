@@ -37,7 +37,6 @@ const ScrollDown = () => {
     <ScrollDownWrapper>
       <Link
         to="about-me"
-        activeClass="active"
         spy={true}
         hashSpy={true}
         smooth={true}

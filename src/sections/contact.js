@@ -82,6 +82,7 @@ const StyledLink = styled.a`
   @media ${props => props.theme.mediaQueries.small} {
     width: 3.5rem;
     height: 3.5rem;
+    border: 1px solid var(--primary-light);
   }
 `;
 
@@ -99,7 +100,11 @@ const StyledIcon = styled(FontAwesomeIcon)`
   }
 
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.smaller} {
+    font-size: 1.6rem;
   }
 `;
 

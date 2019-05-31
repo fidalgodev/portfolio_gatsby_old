@@ -22,6 +22,7 @@ const StyledHeader = styled.header`
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
   overflow: auto;
   justify-content: space-between;
   transition: all 0.2s ease-out;

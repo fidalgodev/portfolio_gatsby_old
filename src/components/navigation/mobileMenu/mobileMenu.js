@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import NavItems from '../navItems/navItems';
 import HamburgerToggler from './hamburgerToggle/hamburgerToggle';
-import DarkModeToggle from '../../UI/darkModeToggle/darkModeToggle';
+import SideDrawer from './sideDrawer/sideDrawer';
 
 const BackgroundWrapper = styled.div`
   position: fixed;
@@ -29,20 +28,14 @@ const Wrapper = styled.div`
 `;
 
 const MobileMenu = ({ notOnePageSection, menuOpened, setMenuOpened }) => {
+  // If on 404 page, dont render menu, because menu links are from react-scroll, won't work there. Logo is prepared to be clicked and will work
   return notOnePageSection ? null : (
     <>
       <HamburgerToggler
         menuOpened={menuOpened}
         toggleChange={() => setMenuOpened(!menuOpened)}
       />
-      {menuOpened && (
-        <BackgroundWrapper>
-          <Wrapper>
-            <NavItems mobile clicked={() => setMenuOpened(false)} />
-            <DarkModeToggle mobile />
-          </Wrapper>
-        </BackgroundWrapper>
-      )}
+      {menuOpened && <SideDrawer setMenuOpened={() => setMenuOpened(false)} />}
     </>
   );
 };

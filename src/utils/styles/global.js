@@ -4,9 +4,7 @@ export default createGlobalStyle`
 
     html {
       font-size: 62.5%; //1rem = 10px
-      overflow-x: hidden;
       box-sizing: border-box;
-      overflow-y: scroll;
       line-height: 1.15;
 
       @media ${props => props.theme.mediaQueries.largest} {
@@ -38,6 +36,7 @@ export default createGlobalStyle`
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
+      overflow: visible;
       --primary: ${props => props.theme.colors.main};
       --primary-light: ${props => props.theme.colors.light};
       --primary-lighter: ${props => props.theme.colors.lighter};

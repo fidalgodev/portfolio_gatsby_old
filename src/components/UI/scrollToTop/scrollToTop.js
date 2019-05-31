@@ -6,6 +6,7 @@ import { animateScroll as scroll } from 'react-scroll';
 
 const StyledWrapper = styled.div`
   position: fixed;
+  z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +28,16 @@ const StyledWrapper = styled.div`
 
   &:active {
     transform: translateY(1px);
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 `;
 

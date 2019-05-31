@@ -5,7 +5,7 @@ const StyledLabel = styled.label`
   cursor: pointer;
   position: absolute;
   top: 50%;
-  right: 1rem;
+  right: 0rem;
   transform: translate(-50%, -50%);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 

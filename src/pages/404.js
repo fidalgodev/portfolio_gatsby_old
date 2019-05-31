@@ -39,6 +39,15 @@ const StyledLink = styled(Link)`
   &:active {
     transform: translateY(1px);
   }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    font-size: 1rem;
+    padding: 1.5rem 3.5rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.small} {
+    padding: 1.3rem 3.2rem;
+  }
 `;
 
 const Svg = styled.img`

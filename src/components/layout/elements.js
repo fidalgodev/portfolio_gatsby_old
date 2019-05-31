@@ -21,6 +21,7 @@ export const StyledSection = styled.section`
   position: relative;
   align-items: center;
   overflow-x: hidden !important;
+  overflow-y: hidden !important;
   justify-content: center;
   flex-direction: column;
   min-height: ${({ fullHeight }) => (fullHeight ? '100vh' : '100%')};

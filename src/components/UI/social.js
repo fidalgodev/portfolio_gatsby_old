@@ -128,6 +128,7 @@ const Social = () => {
         <StyledLink
           rel="noreferrer"
           target="_blank"
+          aria-label="Github"
           href={`https://github.com/${site.siteMetadata.social.github}`}
         >
           <StyledIcon icon={faGithub} />
@@ -135,6 +136,7 @@ const Social = () => {
         <StyledLink
           rel="noreferrer"
           target="_blank"
+          aria-label="Linkedin"
           href={`https://www.linkedin.com/in/${
             site.siteMetadata.social.linkedin
           }`}
@@ -144,6 +146,7 @@ const Social = () => {
         <StyledLink
           rel="noreferrer"
           target="_blank"
+          aria-label="Youtube"
           href={`https://www.youtube.com/channel/${
             site.siteMetadata.social.youtube
           }`}
@@ -153,6 +156,7 @@ const Social = () => {
         <StyledLink
           rel="noreferrer"
           target="_blank"
+          aria-label="Instagram"
           href={`https://www.instagram.com/${
             site.siteMetadata.social.instagram
           }`}
@@ -162,6 +166,7 @@ const Social = () => {
         <StyledLink
           rel="noreferrer"
           target="_blank"
+          aria-label="Twitter"
           href={`https://www.twitter.com/${site.siteMetadata.social.twitter}`}
         >
           <StyledIcon icon={faTwitter} />
@@ -169,6 +174,7 @@ const Social = () => {
         <StyledLink
           rel="noreferrer"
           target="_blank"
+          aria-label="Facebook"
           href={`https://www.facebook.com/${site.siteMetadata.social.facebook}`}
         >
           <StyledIcon icon={faFacebookF} />

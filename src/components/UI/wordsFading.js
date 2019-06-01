@@ -4,11 +4,12 @@ import { animated, useTransition, config } from 'react-spring';
 
 const WORDS = [
   { id: 0, text: 'self-taught' },
-  { id: 1, text: 'fast learner' },
+  { id: 1, text: 'committed' },
   { id: 2, text: 'passionate' },
+  { id: 3, text: 'curious' },
 ];
 
-const Span = styled.span`
+const Wrapper = styled.div`
   font-weight: 600;
   width: 110px;
   position: relative;
@@ -17,6 +18,11 @@ const Span = styled.span`
   font-style: italic;
   color: var(--text-highlight);
   transition: color 0.2s ease-out;
+
+  & span {
+    text-align: center;
+    width: 100%;
+  }
 
   @media ${props => props.theme.mediaQueries.large} {
     width: 100px;
@@ -35,10 +41,10 @@ const Span = styled.span`
   }
 `;
 
-const wordsTransition = () => {
+const wordsFading = () => {
   // Subtitle keywords loop
   const [index, setIndex] = useState(0);
-  const spansTransition = useTransition(WORDS[index], span => span.id, {
+  const wordsTransition = useTransition(WORDS[index], span => span.id, {
     config: config.stiff,
     delay: 450,
     from: {
@@ -67,15 +73,15 @@ const wordsTransition = () => {
     []
   );
   return (
-    <Span>
+    <Wrapper>
       <i style={{ visibility: 'hidden' }}>self-taught</i>
-      {spansTransition.map(({ item, props, key }) => (
+      {wordsTransition.map(({ item, props, key }) => (
         <animated.span key={key} style={props}>
           {item.text}
         </animated.span>
       ))}
-    </Span>
+    </Wrapper>
   );
 };
 
-export default wordsTransition;
+export default wordsFading;

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { animated, useSpring, config } from 'react-spring';
 
 import { Contained } from '../layout/elements';
 import DesktopMenu from './desktopMenu';
 import MobileMenu from './mobileMenu/mobileMenu';
 import LogoNavbar from '../../components/UI/logoNavbar';
 
-const StyledHeader = styled.header`
+const StyledHeader = styled(animated.header)`
   position: fixed;
   width: 100%;
   max-width: 100vw;
@@ -37,6 +38,17 @@ const Navbar = ({ notOnePageSection }) => {
   const [isMobile, setisMobile] = useState(null);
   const [menuOpened, setMenuOpened] = useState(false);
 
+  // Animation
+  const NavBarSpring = useSpring({
+    config: config.wobbly,
+    opacity: 1,
+    transform: 'translateY(0px)',
+    from: {
+      opacity: 0,
+      transform: 'translateY(-50px)',
+    },
+  });
+
   // Change navbar content accordingly
   const changeMobile = () => {
     window.matchMedia('(max-width: 37.5em)').matches
@@ -53,7 +65,7 @@ const Navbar = ({ notOnePageSection }) => {
   }, []);
 
   return (
-    <StyledHeader>
+    <StyledHeader style={NavBarSpring}>
       <Contained>
         <Wrapper isMobile={isMobile}>
           <LogoNavbar

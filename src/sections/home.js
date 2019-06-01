@@ -11,7 +11,7 @@ import {
 import BackgroundLogo from '../components/UI/backgroundLogo';
 import ScrollDown from '../components/UI/scrollDown';
 import Button from '../components/UI/button';
-import WordsTransition from '../components/UI/wordsTransition';
+import WordsFading from '../components/UI/wordsFading';
 
 const SmallWrapper = styled.div`
   width: 90%;
@@ -65,7 +65,7 @@ const SubTitle = styled(animated.h2)`
 
 const Home = () => {
   // Title animation
-  const TitleProps = useSpring({
+  const TitleSpring = useSpring({
     config: config.wobbly,
     delay: 200,
     opacity: 1,
@@ -74,7 +74,7 @@ const Home = () => {
   });
 
   // Sub title animation
-  const SubTitleProps = useSpring({
+  const SubTitleSpring = useSpring({
     config: config.stiff,
     delay: 300,
     opacity: 1,
@@ -83,7 +83,7 @@ const Home = () => {
   });
 
   // Button animation
-  const ButtonProps = useSpring({
+  const ButtonSpring = useSpring({
     config: config.stiff,
     delay: 600,
     opacity: 1,
@@ -96,7 +96,7 @@ const Home = () => {
       <Contained>
         <Wrapper>
           <SmallWrapper>
-            <Title style={TitleProps}>
+            <Title style={TitleSpring}>
               Hello{' '}
               <span role="img" aria-label="Cool hand emoji">
                 ✌🏼
@@ -105,12 +105,11 @@ const Home = () => {
               <br />
               I'm <span>Fidalgo</span>
             </Title>
-            <SubTitle style={SubTitleProps}>
-              A <WordsTransition />
-              Front-end developer
+            <SubTitle style={SubTitleSpring}>
+              A <WordsFading /> Front-end developer
             </SubTitle>
             <Link to="about-me" spy={true} hashSpy={true} smooth={true}>
-              <Button style={ButtonProps}>About me</Button>
+              <Button style={ButtonSpring}>About me</Button>
             </Link>
           </SmallWrapper>
         </Wrapper>

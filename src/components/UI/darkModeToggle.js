@@ -185,13 +185,14 @@ const Span = styled.span`
 
 const darkModeToggle = ({ mobile }) => {
   const darkMode = useDarkMode(false);
-  const DarkModeToggleAnimation = useSpring({
+  //Animation
+  const darkModeToggleSpring = useSpring({
     delay: 200,
     opacity: 1,
     from: { opacity: 0 },
   });
   return (
-    <Wrapper style={DarkModeToggleAnimation} mobile={mobile}>
+    <Wrapper style={darkModeToggleSpring} mobile={mobile}>
       <input
         type="checkbox"
         id="dn"

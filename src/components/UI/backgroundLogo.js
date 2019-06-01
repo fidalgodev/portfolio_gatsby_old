@@ -50,7 +50,7 @@ const StyledImage = styled(Img)`
 
 const BackgroundLogo = () => {
   // Animation
-  const LogoProps = useSpring({
+  const BackgroundLogoSpring = useSpring({
     delay: 200,
     opacity: 1,
     from: { opacity: 0 },
@@ -67,7 +67,7 @@ const BackgroundLogo = () => {
     }
   `);
   return (
-    <animated.div style={LogoProps}>
+    <animated.div style={BackgroundLogoSpring}>
       <StyledImage fluid={file.childImageSharp.fluid} />
     </animated.div>
   );

@@ -6,7 +6,7 @@ import SideDrawer from './sideDrawer';
 
 const MobileMenu = ({ notOnePageSection, menuOpened, setMenuOpened }) => {
   // Animation for the side drawer
-  const SideDrawerProps = useTransition(menuOpened, null, {
+  const SideDrawerTransition = useTransition(menuOpened, null, {
     config: config.stiff,
     from: { opacity: 0, transform: 'translateX(-50%)' },
     enter: { opacity: 1, transform: 'translateX(0%)' },
@@ -19,7 +19,7 @@ const MobileMenu = ({ notOnePageSection, menuOpened, setMenuOpened }) => {
         menuOpened={menuOpened}
         toggleChange={() => setMenuOpened(!menuOpened)}
       />
-      {SideDrawerProps.map(
+      {SideDrawerTransition.map(
         ({ item, key, props }) =>
           item && (
             <SideDrawer

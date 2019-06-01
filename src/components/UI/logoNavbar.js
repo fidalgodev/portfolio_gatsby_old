@@ -23,6 +23,7 @@ const GatsbyStyledLink = styled(GatsbyLink)`
 const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {
   // State to show or hide scroll to top component, gets trigged based on the scroll link component
   const [showScrollTop, setShowScrollTop] = useState(false);
+  // Animation
   const ScrollTopTransition = useTransition(showScrollTop, null, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -31,7 +32,8 @@ const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {
 
   // Logo transition based on dark or light mode
   const { value: darkMode } = useDarkMode(false);
-  const logoTransition = useTransition(darkMode, null, {
+  // Animation
+  const LogoNavBarTransition = useTransition(darkMode, null, {
     config: { duration: 200 },
     from: { position: 'absolute', opacity: 0 },
     enter: { opacity: 1 },
@@ -60,7 +62,7 @@ const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {
 
   // Render dark or light logo
   const renderLogo = () => {
-    return logoTransition.map(({ item, key, props }) =>
+    return LogoNavBarTransition.map(({ item, key, props }) =>
       item ? (
         <animated.div style={props}>
           <Img

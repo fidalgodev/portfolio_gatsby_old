@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
+import { useSpring, animated, config } from 'react-spring';
 
-const ScrollDownWrapper = styled.div`
+const ScrollDownWrapper = styled(animated.div)`
   position: absolute;
   width: 2rem;
   height: 2rem;
@@ -33,8 +34,18 @@ const StyledIcon = styled(FontAwesomeIcon)`
 `;
 
 const ScrollDown = () => {
+  const ScrollDownSpring = useSpring({
+    config: config.wobbly,
+    delay: 500,
+    opacity: 1,
+    transform: 'translateY(0px)',
+    from: {
+      opacity: 0,
+      transform: 'translateY(40px)',
+    },
+  });
   return (
-    <ScrollDownWrapper>
+    <ScrollDownWrapper style={ScrollDownSpring}>
       <Link to="about-me" spy={true} hashSpy={true} smooth={true}>
         <StyledIcon icon={faChevronDown} />
       </Link>

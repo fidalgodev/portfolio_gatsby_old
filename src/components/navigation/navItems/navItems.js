@@ -20,9 +20,10 @@ const StyledNav = styled.nav`
 `;
 
 const NavItems = ({ mobile, clicked }) => {
-  const trailAnimation = useTrail(LINKS.length, {
+  // Animation
+  const navItemsTrail = useTrail(LINKS.length, {
     config: config.wobbly,
-    delay: 200,
+    delay: 300,
     opacity: 1,
     transform: 'translateY(0px)',
     from: {
@@ -35,16 +36,11 @@ const NavItems = ({ mobile, clicked }) => {
 
   return (
     <StyledNav mobile={mobile}>
-      {trailAnimation.map((propStyles, index) => (
+      {navItemsTrail.map((propStyles, index) => (
         <animated.div key={LINKS[index]} style={propStyles}>
           <NavItem key={LINKS[index]} link={LINKS[index]} clicked={clicked} />
-          {/* <animated.div style={{ height }}>{items[index]}</animated.div> */}
         </animated.div>
       ))}
-
-      {/* {LINKS.map(link => (
-        <NavItem key={link} link={link} clicked={clicked} />
-      ))} */}
     </StyledNav>
   );
 };

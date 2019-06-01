@@ -14,8 +14,7 @@
     "gatsby": "^2.6.0",
     "gatsby-cli": "^2.6.3",
     "gatsby-image": "^2.1.0",
-    "gatsby-plugin-google-analytics": "^2.0.20",
-    "gatsby-plugin-google-fonts": "^1.0.0",
+    "gatsby-plugin-gtag": "^1.0.11",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
@@ -32,6 +31,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-scroll": "^1.7.11",
+    "react-spring": "^8.0.20",
     "rehype-react": "^3.1.0",
     "styled-components": "^4.2.0",
     "use-dark-mode": "^2.3.1"

@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
 import { Link as GatsbyLink } from 'gatsby';
 import Img from 'gatsby-image';
 import useDarkMode from 'use-dark-mode';
+import { useTransition, animated } from 'react-spring';
 
 import ScrollToTop from '../../../UI/scrollToTop/scrollToTop';
 
 const StyledLink = styled(Link)`
   cursor: pointer;
   display: flex;
+  align-items: center;
 `;
 
 const GatsbyStyledLink = styled(GatsbyLink)`
@@ -19,12 +20,25 @@ const GatsbyStyledLink = styled(GatsbyLink)`
   display: flex;
 `;
 
-const StyledLogo = styled(Img)``;
-
 const Logo = ({ notOnePageSection, setMenuOpened }) => {
   // State to show or hide scroll to top component, gets trigged based on the scroll link component
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const ScrollTopTransition = useTransition(showScrollTop, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
+  // Logo transition based on dark or light mode
   const { value: darkMode } = useDarkMode(false);
+  const logoTransition = useTransition(darkMode, null, {
+    config: { duration: 200 },
+    from: { position: 'absolute', opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
+  // Query for logos
   const { darkLogo, lightLogo } = useStaticQuery(graphql`
     query {
       darkLogo: file(relativePath: { eq: "logo/logo_dark.png" }) {
@@ -46,18 +60,24 @@ const Logo = ({ notOnePageSection, setMenuOpened }) => {
 
   // Render dark or light logo
   const renderLogo = () => {
-    return darkMode ? (
-      <StyledLogo
-        alt="Logo Light"
-        title="Logo Light"
-        fixed={lightLogo.childImageSharp.fixed}
-      />
-    ) : (
-      <StyledLogo
-        alt="Logo Dark"
-        title="Logo Dark"
-        fixed={darkLogo.childImageSharp.fixed}
-      />
+    return logoTransition.map(({ item, key, props }) =>
+      item ? (
+        <animated.div style={props}>
+          <Img
+            alt="Logo Light"
+            title="Logo Light"
+            fixed={lightLogo.childImageSharp.fixed}
+          />
+        </animated.div>
+      ) : (
+        <animated.div style={props}>
+          <Img
+            alt="Logo Dark"
+            title="Logo Dark"
+            fixed={darkLogo.childImageSharp.fixed}
+          />
+        </animated.div>
+      )
     );
   };
 
@@ -69,7 +89,6 @@ const Logo = ({ notOnePageSection, setMenuOpened }) => {
       <StyledLink
         to="header"
         smooth={true}
-        duration={500}
         spy={true}
         // When header section is active, hide scroll to top When inactive, show scroll to top
         onSetActive={() => setShowScrollTop(false)}
@@ -78,7 +97,14 @@ const Logo = ({ notOnePageSection, setMenuOpened }) => {
       >
         {renderLogo()}
       </StyledLink>
-      {showScrollTop && <ScrollToTop />}
+      {ScrollTopTransition.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.div key={key} style={props}>
+              <ScrollToTop />
+            </animated.div>
+          )
+      )}
     </>
   );
 };

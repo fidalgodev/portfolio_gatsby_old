@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTrail, animated, config } from 'react-spring';
 
 import NavItem from './navItem/navItem';
 
@@ -7,6 +8,7 @@ const LINKS = ['About me', 'Portfolio', 'Contact'];
 
 const StyledNav = styled.nav`
   display: flex;
+  overflow: hidden;
   flex: 1;
   flex-direction: ${({ mobile }) => (mobile ? 'column' : 'row')};
   justify-content: ${({ mobile }) => (mobile ? 'center' : 'flex-end')};
@@ -17,12 +19,34 @@ const StyledNav = styled.nav`
   }
 `;
 
-const NavItems = ({ mobile, clicked }) => (
-  <StyledNav mobile={mobile}>
-    {LINKS.map(link => (
-      <NavItem key={link} link={link} clicked={clicked} />
-    ))}
-  </StyledNav>
-);
+const NavItems = ({ mobile, clicked }) => {
+  const trailAnimation = useTrail(LINKS.length, {
+    config: config.wobbly,
+    delay: 200,
+    opacity: 1,
+    transform: 'translateY(0px)',
+    from: {
+      opacity: 0,
+      transform: 'translateY(20px)',
+      display: 'flex',
+      cursor: 'pointer',
+    },
+  });
+
+  return (
+    <StyledNav mobile={mobile}>
+      {trailAnimation.map((propStyles, index) => (
+        <animated.div key={LINKS[index]} style={propStyles}>
+          <NavItem key={LINKS[index]} link={LINKS[index]} clicked={clicked} />
+          {/* <animated.div style={{ height }}>{items[index]}</animated.div> */}
+        </animated.div>
+      ))}
+
+      {/* {LINKS.map(link => (
+        <NavItem key={link} link={link} clicked={clicked} />
+      ))} */}
+    </StyledNav>
+  );
+};
 
 export default NavItems;

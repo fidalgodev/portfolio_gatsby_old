@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 import NavItems from '../../navItems/navItems';
 import DarkModeToggle from '../../../UI/darkModeToggle/darkModeToggle';
 import useLockBodyScroll from '../../../../utils/useLockScroll';
 
-const BackgroundWrapper = styled.div`
+const BackgroundWrapper = styled(animated.div)`
   position: fixed;
   z-index: -1;
   top: 0;
@@ -29,10 +30,10 @@ const Wrapper = styled.div`
   padding: 2rem 1rem;
 `;
 
-const SideDrawer = ({ setMenuOpened }) => {
+const SideDrawer = ({ setMenuOpened, ...rest }) => {
   useLockBodyScroll();
   return (
-    <BackgroundWrapper>
+    <BackgroundWrapper {...rest}>
       <Wrapper>
         <NavItems mobile clicked={() => setMenuOpened(false)} />
         <DarkModeToggle mobile />

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
+import { useSpring, useTransition, animated, config } from 'react-spring';
 
 import {
   Contained,
@@ -16,7 +17,7 @@ const SmallWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Title = styled.h1`
+const Title = styled(animated.h1)`
   font-weight: 200;
   margin: 0;
   margin-bottom: 2rem;
@@ -44,7 +45,7 @@ const Title = styled.h1`
   }
 `;
 
-const SubTitle = styled.h2`
+const SubTitle = styled(animated.h2)`
   color: var(--text);
   font-weight: 400;
   margin: 0;
@@ -62,20 +63,97 @@ const SubTitle = styled.h2`
 
   & span {
     font-weight: 600;
+    width: 110px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
     font-style: italic;
     color: var(--text-highlight);
     transition: color 0.2s ease-out;
+
+    @media ${props => props.theme.mediaQueries.large} {
+      width: 100px;
+    }
+
+    @media ${props => props.theme.mediaQueries.medium} {
+      width: 95px;
+    }
+
+    @media ${props => props.theme.mediaQueries.small} {
+      width: 90px;
+    }
+
+    @media ${props => props.theme.mediaQueries.smallest} {
+      width: 85px;
+    }
   }
 `;
 
+const spans = [
+  { id: 0, text: 'self-taught' },
+  { id: 1, text: 'fast learner' },
+  { id: 2, text: 'passionate' },
+];
+
 const Header = () => {
+  // Subtitle keywords loop
+  const [index, setIndex] = useState(0);
+  const spansTransition = useTransition(spans[index], item => item.id, {
+    config: config.stiff,
+    delay: 450,
+    from: {
+      opacity: 0,
+      transform: 'translateY(10px)',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      margin: 0,
+    },
+    enter: { opacity: 1, transform: 'translateY(0px)' },
+    leave: { opacity: 0, transform: 'translateY(-10px)' },
+  });
+  useEffect(
+    () =>
+      void setInterval(
+        () => setIndex(state => (state + 1) % spans.length),
+        2500
+      ),
+    []
+  );
+
+  // Title animation
+  const TitleProps = useSpring({
+    config: config.wobbly,
+    delay: 200,
+    opacity: 1,
+    transform: 'translateX(0px)',
+    from: { opacity: 0, transform: 'translateX(40px)' },
+  });
+
+  // Sub title animation
+  const SubTitleProps = useSpring({
+    config: config.stiff,
+    delay: 300,
+    opacity: 1,
+    transform: 'translateY(0px)',
+    from: { opacity: 0, transform: 'translateY(40px)' },
+  });
+
+  // Button animation
+  const ButtonProps = useSpring({
+    config: config.stiff,
+    delay: 600,
+    opacity: 1,
+    from: { opacity: 0 },
+  });
+
   return (
     <StyledSection fullHeight id="header">
       <BackgroundLogo />
       <Contained>
         <Wrapper>
           <SmallWrapper>
-            <Title>
+            <Title style={TitleProps}>
               Hello{' '}
               <span role="img" aria-label="Cool hand emoji">
                 ✌🏼
@@ -84,17 +162,20 @@ const Header = () => {
               <br />
               I'm <span>Fidalgo</span>
             </Title>
-            <SubTitle>
-              A <span>self-taught</span> Front-end developer
+            <SubTitle style={SubTitleProps}>
+              A{' '}
+              <span>
+                <i style={{ visibility: 'hidden' }}>self-taught</i>
+                {spansTransition.map(({ item, props, key }) => (
+                  <animated.span key={key} style={props}>
+                    {item.text}
+                  </animated.span>
+                ))}
+              </span>{' '}
+              Front-end developer
             </SubTitle>
-            <Link
-              to="about-me"
-              spy={true}
-              hashSpy={true}
-              smooth={true}
-              duration={500}
-            >
-              <Button>About me</Button>
+            <Link to="about-me" spy={true} hashSpy={true} smooth={true}>
+              <Button style={ButtonProps}>About me</Button>
             </Link>
           </SmallWrapper>
         </Wrapper>

@@ -7,7 +7,7 @@ const StyledLink = styled(Link)`
 `;
 
 const ScrollLink = ({ to, children }) => (
-  <StyledLink to={to} spy={true} hashSpy={true} smooth={true} duration={500}>
+  <StyledLink to={to} spy={true} hashSpy={true} smooth={true}>
     {children}
   </StyledLink>
 );

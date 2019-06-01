@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 
-const StyledButton = styled.button`
+const StyledButton = styled(animated.button)`
   outline: none;
   background: var(--primary);
   color: var(--white);

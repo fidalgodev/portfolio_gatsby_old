@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import { useSpring, animated } from 'react-spring';
 
 const StyledImage = styled(Img)`
   position: absolute !important;
@@ -10,8 +11,8 @@ const StyledImage = styled(Img)`
   top: -30%;
   overflow: hidden;
   opacity: 0.5;
-  right: -8%;
-  width: 55%;
+  right: -5%;
+  width: 50%;
   transform: rotate(-15deg);
 
   @media ${props => props.theme.mediaQueries.largest} {
@@ -48,6 +49,12 @@ const StyledImage = styled(Img)`
 `;
 
 const BackgroundLogo = () => {
+  // Animation
+  const LogoProps = useSpring({
+    delay: 200,
+    opacity: 1,
+    from: { opacity: 0 },
+  });
   const { file } = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "logo_background.png" }) {
@@ -59,7 +66,11 @@ const BackgroundLogo = () => {
       }
     }
   `);
-  return <StyledImage fluid={file.childImageSharp.fluid} />;
+  return (
+    <animated.div style={LogoProps}>
+      <StyledImage fluid={file.childImageSharp.fluid} />
+    </animated.div>
+  );
 };
 
 export default BackgroundLogo;

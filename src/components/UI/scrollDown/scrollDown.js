@@ -35,13 +35,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
 const ScrollDown = () => {
   return (
     <ScrollDownWrapper>
-      <Link
-        to="about-me"
-        spy={true}
-        hashSpy={true}
-        smooth={true}
-        duration={500}
-      >
+      <Link to="about-me" spy={true} hashSpy={true} smooth={true}>
         <StyledIcon icon={faChevronDown} />
       </Link>
     </ScrollDownWrapper>

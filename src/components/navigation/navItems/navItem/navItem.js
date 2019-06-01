@@ -33,7 +33,6 @@ const NavItem = ({ link, clicked }) => (
     hashSpy={true}
     spy={true}
     smooth={true}
-    duration={500}
   >
     {link}
   </StyledLink>

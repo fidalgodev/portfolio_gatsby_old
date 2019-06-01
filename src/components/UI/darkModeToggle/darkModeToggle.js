@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import useDarkMode from 'use-dark-mode';
+import { useSpring, animated } from 'react-spring';
 
-const Wrapper = styled.div`
+const Wrapper = styled(animated.div)`
   display: flex;
   transform: ${({ mobile }) => (mobile ? 'scale(0.6)' : 'scale(0.7)')};
   margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
@@ -184,8 +185,13 @@ const Span = styled.span`
 
 const darkModeToggle = ({ mobile }) => {
   const darkMode = useDarkMode(false);
+  const DarkModeToggleAnimation = useSpring({
+    delay: 200,
+    opacity: 1,
+    from: { opacity: 0 },
+  });
   return (
-    <Wrapper mobile={mobile}>
+    <Wrapper style={DarkModeToggleAnimation} mobile={mobile}>
       <input
         type="checkbox"
         id="dn"

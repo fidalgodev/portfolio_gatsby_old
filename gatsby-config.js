@@ -5,7 +5,7 @@ module.exports = {
     author: `Fidalgo`,
     siteUrl: 'https://fidalgodev.com',
     social: {
-      twitter: '@fidalgodev',
+      twitter: 'fidalgodev',
       instagram: 'fidalgodev',
       linkedin: 'fidalgodev',
       youtube: 'UC8pnh6gmhMP-hyQ6MJb414g',

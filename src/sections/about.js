@@ -6,13 +6,13 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import ScrollLink from '../components/utils/scrollLink';
-import Heading from '../components/UI/heading/heading';
+import Heading from '../components/UI/heading';
 import {
   Contained,
   StyledSection,
   Wrapper,
 } from '../components/layout/elements';
-import ButtonLink from '../components/UI/buttonLink/buttonLink';
+import ButtonLink from '../components/UI/buttonLink';
 
 const AboutText = styled.div`
   color: var(--text);
@@ -91,11 +91,11 @@ const StackTitle = styled.h2`
   }
 
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -156,7 +156,7 @@ const About = () => {
         <Wrapper>
           <Heading
             title="About me"
-            subtitle="If you’re <span>wondering</span> who the f*** am I…"
+            subtitle="If you’re <span>wondering</span> who <span>I am</span>…"
           />
           <AboutText>
             {renderCustom(aboutMe.childMarkdownRemark.htmlAst)}

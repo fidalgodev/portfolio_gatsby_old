@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Heading from '../components/UI/heading/heading';
+import Heading from '../components/UI/heading';
 import {
   Contained,
   StyledSection,

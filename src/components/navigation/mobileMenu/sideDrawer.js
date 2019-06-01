@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 
-import NavItems from '../../navItems/navItems';
-import DarkModeToggle from '../../../UI/darkModeToggle/darkModeToggle';
-import useLockBodyScroll from '../../../../utils/useLockScroll';
+import NavItems from '../navItems/navItems';
+import DarkModeToggle from '../../UI/darkModeToggle';
+import useLockBodyScroll from '../../../utils/useLockScroll';
 
 const BackgroundWrapper = styled(animated.div)`
   position: fixed;

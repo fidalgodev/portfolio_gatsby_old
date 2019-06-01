@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTransition, config } from 'react-spring';
 
-import HamburgerToggler from './hamburgerToggle/hamburgerToggle';
-import SideDrawer from './sideDrawer/sideDrawer';
+import HamburgerToggler from './hamburgerToggle';
+import SideDrawer from './sideDrawer';
 
 const MobileMenu = ({ notOnePageSection, menuOpened, setMenuOpened }) => {
   // Animation for the side drawer

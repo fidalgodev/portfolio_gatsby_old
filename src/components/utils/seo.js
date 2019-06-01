@@ -13,6 +13,9 @@ const SEO = ({ meta, lang, title }) => {
             description
             author
             siteUrl
+            social {
+              twitter
+            }
             imageShare
           }
         }
@@ -58,7 +61,7 @@ const SEO = ({ meta, lang, title }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.social.twitter,
         },
         {
           name: `twitter:title`,

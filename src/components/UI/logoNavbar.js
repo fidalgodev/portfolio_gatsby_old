@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 import useDarkMode from 'use-dark-mode';
 import { useTransition, animated } from 'react-spring';
 
-import ScrollToTop from '../../../UI/scrollToTop/scrollToTop';
+import ScrollToTop from '../UI/scrollToTop';
 
 const StyledLink = styled(Link)`
   cursor: pointer;
@@ -20,7 +20,7 @@ const GatsbyStyledLink = styled(GatsbyLink)`
   display: flex;
 `;
 
-const Logo = ({ notOnePageSection, setMenuOpened }) => {
+const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {
   // State to show or hide scroll to top component, gets trigged based on the scroll link component
   const [showScrollTop, setShowScrollTop] = useState(false);
   const ScrollTopTransition = useTransition(showScrollTop, null, {
@@ -44,14 +44,14 @@ const Logo = ({ notOnePageSection, setMenuOpened }) => {
       darkLogo: file(relativePath: { eq: "logo/logo_dark.png" }) {
         childImageSharp {
           fixed(height: 35, quality: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }
       lightLogo: file(relativePath: { eq: "logo/logo_light.png" }) {
         childImageSharp {
           fixed(height: 35, quality: 80) {
-            ...GatsbyImageSharpFixed
+            ...GatsbyImageSharpFixed_tracedSVG
           }
         }
       }
@@ -109,4 +109,4 @@ const Logo = ({ notOnePageSection, setMenuOpened }) => {
   );
 };
 
-export default Logo;
+export default LogoNavBar;

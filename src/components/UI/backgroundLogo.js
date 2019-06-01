@@ -44,7 +44,7 @@ const StyledImage = styled(Img)`
   @media ${props => props.theme.mediaQueries.smallest} {
     top: 0%;
     right: -12%;
-    width: 75%;
+    width: 70%;
   }
 `;
 
@@ -60,7 +60,7 @@ const BackgroundLogo = () => {
       file(relativePath: { eq: "logo_background.png" }) {
         childImageSharp {
           fluid(quality: 80, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }

@@ -3,110 +3,14 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import useDarkMode from 'use-dark-mode';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faFacebookF,
-  faLinkedinIn,
-  faInstagram,
-  faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
 
 import {
   Contained,
   StyledSection,
   Wrapper,
 } from '../components/layout/elements';
-import Heading from '../components/UI/heading/heading';
-
-const Email = styled.a`
-  color: var(--text-highlight);
-  font-size: 2rem;
-  position: relative;
-  font-weight: 600;
-  text-decoration: none;
-  margin-bottom: 4rem;
-  transition: color 0.2s ease-out;
-
-  @media ${props => props.theme.mediaQueries.medium} {
-    font-size: 1.8rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.7rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 1.4rem;
-  }
-`;
-
-const SocialWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10rem;
-
-  @media ${props => props.theme.mediaQueries.medium} {
-    margin-bottom: 8rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.small} {
-    margin-bottom: 6rem;
-  }
-`;
-
-const StyledLink = styled.a`
-  text-decoration: none;
-  border-radius: 50%;
-  width: 4.5rem;
-  height: 4.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--primary-light);
-  margin: 0 1.5rem;
-  transition: all 0.2s ease-out;
-
-  &:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
-  }
-
-  @media ${props => props.theme.mediaQueries.medium} {
-    width: 4rem;
-    height: 4rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.small} {
-    width: 3.5rem;
-    height: 3.5rem;
-    border: 1px solid var(--primary-light);
-  }
-`;
-
-const StyledIcon = styled(FontAwesomeIcon)`
-  color: var(--text-highlight);
-  font-size: 2.2rem;
-  transition: color 0.2s ease-out;
-
-  ${StyledLink}:hover & {
-    color: var(--background);
-  }
-
-  @media ${props => props.theme.mediaQueries.medium} {
-    font-size: 2rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.7rem;
-  }
-
-  @media ${props => props.theme.mediaQueries.smaller} {
-    font-size: 1.6rem;
-  }
-`;
+import Heading from '../components/UI/heading';
+import Social from '../components/UI/social';
 
 const LogoImage = styled(Img)`
   width: 15%;
@@ -132,14 +36,14 @@ const Contact = () => {
       darkLogo: file(relativePath: { eq: "logo/logovertical_black.png" }) {
         childImageSharp {
           fluid(maxWidth: 250, quality: 80) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
       lightLogo: file(relativePath: { eq: "logo/logovertical_white.png" }) {
         childImageSharp {
           fluid(maxWidth: 250, quality: 80) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -154,24 +58,7 @@ const Contact = () => {
             title="Contact me"
             subtitle="If you want to <span>talk</span>, you can <span>find me</span> at:"
           />
-          <Email href="mailto:hello@fidalgo.dev">hello@fidalgo.dev</Email>
-          <SocialWrapper>
-            <StyledLink rel="noreferrer">
-              <StyledIcon icon={faGithub} />
-            </StyledLink>
-            <StyledLink rel="noreferrer">
-              <StyledIcon icon={faFacebookF} />
-            </StyledLink>
-            <StyledLink rel="noreferrer">
-              <StyledIcon icon={faLinkedinIn} />
-            </StyledLink>
-            <StyledLink rel="noreferrer">
-              <StyledIcon icon={faInstagram} />
-            </StyledLink>
-            <StyledLink rel="noreferrer">
-              <StyledIcon icon={faYoutube} />
-            </StyledLink>
-          </SocialWrapper>
+          <Social />
           {darkMode ? (
             <LogoImage fluid={lightLogo.childImageSharp.fluid} />
           ) : (

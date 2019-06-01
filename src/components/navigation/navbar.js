@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Contained } from '../../layout/elements';
-import DesktopMenu from '../desktopMenu/desktopMenu';
-import MobileMenu from '../mobileMenu/mobileMenu';
-import Logo from './logo/logo';
+import { Contained } from '../layout/elements';
+import DesktopMenu from './desktopMenu';
+import MobileMenu from './mobileMenu/mobileMenu';
+import LogoNavbar from '../../components/UI/logoNavbar';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -56,7 +56,7 @@ const Navbar = ({ notOnePageSection }) => {
     <StyledHeader>
       <Contained>
         <Wrapper isMobile={isMobile}>
-          <Logo
+          <LogoNavbar
             notOnePageSection={notOnePageSection}
             setMenuOpened={setMenuOpened}
           />

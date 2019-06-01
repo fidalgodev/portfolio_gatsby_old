@@ -36,8 +36,7 @@ const StyledWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.mediaQueries.small} {
-    width: 2.5rem;
-    height: 2.5rem;
+    margin-bottom: 2rem;
   }
 `;
 

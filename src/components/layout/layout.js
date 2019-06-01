@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import GlobalStyles from '../../utils/styles/global';
 import theme from '../../utils/styles/theme';
 
-import Navbar from '../navigation/navbar/navbar';
+import Navbar from '../navigation/navbar';
 
 const Wrapper = styled.div`
   display: flex;

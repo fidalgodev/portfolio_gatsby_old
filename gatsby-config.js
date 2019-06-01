@@ -3,8 +3,17 @@ module.exports = {
     title: `Fidalgo | Front-end Developer`,
     description: `I’m Fidalgo , a 23 years old self-taught Front-end developer , from Portugal .`,
     author: `Fidalgo`,
-    siteUrl: 'https://fidalgo.dev',
-    // name of the image to share, should be in static folder
+    siteUrl: 'https://fidalgodev.com',
+    social: {
+      twitter: '@fidalgodev',
+      instagram: 'fidalgodev',
+      linkedin: 'fidalgodev',
+      youtube: 'UC8pnh6gmhMP-hyQ6MJb414g',
+      facebook: 'fidalgodev',
+      github: 'fidalgodev',
+      email: 'hello@fidalgo.dev',
+    },
+    // name of the image for social website share, should be in static folder
     imageShare: `share.jpg`,
   },
   plugins: [

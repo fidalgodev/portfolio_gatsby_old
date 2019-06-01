@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout/layout';
-import SEO from '../components/utils/seo';
 import {
   StyledSection,
   Contained,
   Wrapper,
 } from '../components/layout/elements';
-import Heading from '../components/UI/heading/heading';
+import Heading from '../components/UI/heading';
 import NotFoundSVG from '../images/not_found.svg';
 
 const StyledLink = styled(Link)`
@@ -58,7 +57,6 @@ const Svg = styled.img`
 
 const NotFoundPage = () => (
   <Layout notOnePageSection>
-    <SEO title="404: Page not found" />
     <StyledSection fullHeight>
       <Contained>
         <Wrapper>

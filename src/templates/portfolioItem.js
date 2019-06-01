@@ -5,7 +5,7 @@ import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Img from 'gatsby-image';
 
-import ButtonLink from '../components/UI/buttonLink/buttonLink';
+import ButtonLink from '../components/UI/buttonLink';
 
 const Wrapper = styled.div`
   display: flex;

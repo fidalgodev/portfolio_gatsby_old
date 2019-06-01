@@ -3,7 +3,7 @@ stack: 'HTML5 - CSS3 - JAVASCRIPT - SASS - WEBPACK - REACTJS - REDUX - STYLED CO
 curriculum: 'curriculum.pdf'
 ---
 
-I’m <span>Fidalgo</span> , a 23 years old self-taught <span>Front-end developer</span> , from <span>Portugal</span> .
+I’m <span>Fidalgo</span> , a 23 years old self-taught <span>Front-end</span> developer , from <span>Portugal</span> .
 
 After my college degree in _"Communication & Multimedia"_, I got a job as a "developer", where I stayed for almost 2 years, but I only developed websites with Wordpress custom themes, and HTML & CSS… So I _wasn’t learning and improving_, I _felt stuck_.
 

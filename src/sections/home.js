@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-scroll';
-import { useSpring, useTransition, animated, config } from 'react-spring';
+import { useSpring, animated, config } from 'react-spring';
 
 import {
   Contained,
   StyledSection,
   Wrapper,
 } from '../components/layout/elements';
-import BackgroundLogo from '../components/UI/backgroundLogo/backgroundLogo';
-import ScrollDown from '../components/UI/scrollDown/scrollDown';
-import Button from '../components/UI/button/button';
+import BackgroundLogo from '../components/UI/backgroundLogo';
+import ScrollDown from '../components/UI/scrollDown';
+import Button from '../components/UI/button';
+import WordsTransition from '../components/UI/wordsTransition';
 
 const SmallWrapper = styled.div`
   width: 90%;
@@ -60,67 +61,9 @@ const SubTitle = styled(animated.h2)`
   @media ${props => props.theme.mediaQueries.smallest} {
     font-size: 1.5rem;
   }
-
-  & span {
-    font-weight: 600;
-    width: 110px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    font-style: italic;
-    color: var(--text-highlight);
-    transition: color 0.2s ease-out;
-
-    @media ${props => props.theme.mediaQueries.large} {
-      width: 100px;
-    }
-
-    @media ${props => props.theme.mediaQueries.medium} {
-      width: 95px;
-    }
-
-    @media ${props => props.theme.mediaQueries.small} {
-      width: 90px;
-    }
-
-    @media ${props => props.theme.mediaQueries.smallest} {
-      width: 85px;
-    }
-  }
 `;
 
-const spans = [
-  { id: 0, text: 'self-taught' },
-  { id: 1, text: 'fast learner' },
-  { id: 2, text: 'passionate' },
-];
-
-const Header = () => {
-  // Subtitle keywords loop
-  const [index, setIndex] = useState(0);
-  const spansTransition = useTransition(spans[index], item => item.id, {
-    config: config.stiff,
-    delay: 450,
-    from: {
-      opacity: 0,
-      transform: 'translateY(10px)',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      margin: 0,
-    },
-    enter: { opacity: 1, transform: 'translateY(0px)' },
-    leave: { opacity: 0, transform: 'translateY(-10px)' },
-  });
-  useEffect(
-    () =>
-      void setInterval(
-        () => setIndex(state => (state + 1) % spans.length),
-        2500
-      ),
-    []
-  );
-
+const Home = () => {
   // Title animation
   const TitleProps = useSpring({
     config: config.wobbly,
@@ -163,15 +106,7 @@ const Header = () => {
               I'm <span>Fidalgo</span>
             </Title>
             <SubTitle style={SubTitleProps}>
-              A{' '}
-              <span>
-                <i style={{ visibility: 'hidden' }}>self-taught</i>
-                {spansTransition.map(({ item, props, key }) => (
-                  <animated.span key={key} style={props}>
-                    {item.text}
-                  </animated.span>
-                ))}
-              </span>{' '}
+              A <WordsTransition />
               Front-end developer
             </SubTitle>
             <Link to="about-me" spy={true} hashSpy={true} smooth={true}>
@@ -185,4 +120,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Home;

@@ -37,9 +37,9 @@ const Layout = ({ notOnePageSection, children }) => {
   // Run the function to change the VH variable when the browser is resized
   useEffect(() => {
     changeVhVariable();
-    window.addEventListener('resize', changeVhVariable);
-    return () => window.removeEventListener('resize', changeVhVariable);
-  }, [changeVhVariable]);
+    // window.addEventListener('resize', changeVhVariable);
+    // return () => window.removeEventListener('resize', changeVhVariable);
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>

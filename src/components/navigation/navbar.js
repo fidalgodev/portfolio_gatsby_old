@@ -42,10 +42,10 @@ const Navbar = ({ notOnePageSection }) => {
   const NavBarSpring = useSpring({
     config: config.wobbly,
     opacity: 1,
-    transform: 'translateY(0px)',
+    height: isMobile ? '6rem' : '7rem',
     from: {
       opacity: 0,
-      transform: 'translateY(-50px)',
+      height: '0rem',
     },
   });
 

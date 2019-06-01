@@ -101,11 +101,7 @@ const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {
       </StyledLink>
       {ScrollTopTransition.map(
         ({ item, key, props }) =>
-          item && (
-            <animated.div key={key} style={props}>
-              <ScrollToTop />
-            </animated.div>
-          )
+          item && <ScrollToTop style={props} key={key} />
       )}
     </>
   );

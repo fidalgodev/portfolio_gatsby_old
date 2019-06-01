@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { animateScroll as scroll } from 'react-scroll';
+import { animated } from 'react-spring';
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled(animated.div)`
   position: fixed;
   z-index: -1;
   display: flex;
@@ -45,9 +46,9 @@ const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 1.2rem;
 `;
 
-const ScrollToTop = () => {
+const ScrollToTop = ({ style }) => {
   return (
-    <StyledWrapper onClick={() => scroll.scrollToTop()}>
+    <StyledWrapper style={style} onClick={() => scroll.scrollToTop()}>
       <StyledIcon icon={faChevronUp} />
     </StyledWrapper>
   );

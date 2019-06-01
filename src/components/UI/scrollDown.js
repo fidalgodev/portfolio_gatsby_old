@@ -46,7 +46,7 @@ const ScrollDown = () => {
   });
   return (
     <ScrollDownWrapper style={ScrollDownSpring}>
-      <Link to="about-me" spy={true} hashSpy={true} smooth={true}>
+      <Link to="about-me" spy={true} smooth={true}>
         <StyledIcon icon={faChevronDown} />
       </Link>
     </ScrollDownWrapper>

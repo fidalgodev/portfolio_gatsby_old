@@ -47,6 +47,7 @@ const wordsFading = () => {
   const wordsTransition = useTransition(WORDS[index], span => span.id, {
     config: config.stiff,
     delay: 450,
+    duration: 100,
     from: {
       opacity: 0,
       transform: 'translateY(10px)',

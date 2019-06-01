@@ -30,7 +30,6 @@ const NavItem = ({ link, clicked }) => (
       .split(' ')
       .join('-')
       .toLowerCase()}`}
-    hashSpy={true}
     spy={true}
     smooth={true}
   >

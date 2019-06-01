@@ -108,7 +108,7 @@ const Home = () => {
             <SubTitle style={SubTitleSpring}>
               A <WordsFading /> Front-end developer
             </SubTitle>
-            <Link to="about-me" spy={true} hashSpy={true} smooth={true}>
+            <Link to="about-me" spy={true} smooth={true}>
               <Button style={ButtonSpring}>About me</Button>
             </Link>
           </SmallWrapper>

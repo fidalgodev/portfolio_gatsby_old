@@ -24,15 +24,15 @@ export const StyledSection = styled.section`
          overflow-y: hidden !important;
          justify-content: center;
          flex-direction: column;
-         height: ${({ fullHeight }) =>
+         width: 100%;
+         min-height: ${({ fullHeight }) =>
            fullHeight
              ? '100vh'
-             : '100%'}; /* Fallback for browsers that do not support Custom Properties */
-         height: ${({ fullHeight }) =>
-           fullHeight ? 'calc(var(--vh, 1vh) * 100)' : '100%'};
+             : 'auto'}; /* Fallback for browsers that do not support Custom Properties */
+         /* height: ${({ fullHeight }) =>
+           fullHeight ? 'calc(var(--vh, 1vh) * 100)' : '100%'}; */
          /* min-height: ${({ fullHeight }) =>
            fullHeight ? '100vh' : '100%'}; */
-         width: 100%;
        `;
 
 export const Wrapper = styled.div`

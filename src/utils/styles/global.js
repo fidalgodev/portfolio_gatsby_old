@@ -39,8 +39,10 @@ export default createGlobalStyle`
       }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Montserrat', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", '!default';
       margin: 0;
+      width: 100%;
+      height: 100%;
       overflow: visible;
       --primary: ${props => props.theme.colors.main};
       --primary-light: ${props => props.theme.colors.light};

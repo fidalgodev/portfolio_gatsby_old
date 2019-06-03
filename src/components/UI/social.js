@@ -77,6 +77,12 @@ const StyledLink = styled.a`
     margin: 0 1rem;
     border: 1px solid var(--primary-light);
   }
+
+  @media ${props => props.theme.mediaQueries.smallest} {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.8rem;
+  }
 `;
 
 const StyledIcon = styled(FontAwesomeIcon)`

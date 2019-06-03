@@ -50,17 +50,12 @@ const Title = styled.h1`
   color: var(--white);
   transition: color 0.2s ease-out;
 
-  @media ${props => props.theme.mediaQueries.medium} {
-    font-size: 1.8rem;
-  }
-
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.7rem;
     margin-bottom: 2rem;
   }
 
   @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
   }
 
@@ -110,12 +105,8 @@ const Text = styled.div`
     }
   }
 
-  @media ${props => props.theme.mediaQueries.medium} {
-    font-size: 1.5rem;
-  }
-
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -129,7 +120,7 @@ const Stack = styled.p`
   transition: color 0.2s ease-out;
 
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-bottom: 3rem;
   }
 `;

@@ -5,7 +5,7 @@ import { useSpring, animated } from 'react-spring';
 
 const Wrapper = styled(animated.div)`
   display: flex;
-  transform: ${({ mobile }) => (mobile ? 'scale(0.6)' : 'scale(0.7)')};
+  transform: ${({ mobile }) => (mobile ? 'scale(1)' : 'scale(0.7)')};
   margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
   margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
   position: ${({ mobile }) => (mobile ? 'relative' : 'absolute')};

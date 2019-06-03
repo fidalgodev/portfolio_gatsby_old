@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 export const Contained = styled.div`
   max-width: 124rem;
@@ -28,6 +29,10 @@ export const StyledSection = styled.section`
          min-height: ${({ fullHeight }) =>
            fullHeight
              ? '100vh'
+             : 'auto'}; /* Fallback for browsers that do not support Custom Properties */
+         min-height: ${({ fullHeight }) =>
+           fullHeight
+             ? 'calc(var(--vh, 1vh) * 100)'
              : 'auto'}; /* Fallback for browsers that do not support Custom Properties */
          /* height: ${({ fullHeight }) =>
            fullHeight ? 'calc(var(--vh, 1vh) * 100)' : '100%'}; */

@@ -35,7 +35,6 @@ const StyledLink = styled.a`
   }
 
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1rem;
     padding: 1.1rem 2.6rem;
   }
 `;

@@ -30,7 +30,6 @@ const StyledButton = styled(animated.button)`
   }
 
   @media ${props => props.theme.mediaQueries.medium} {
-    font-size: 1rem;
     padding: 1.5rem 3.5rem;
   }
 

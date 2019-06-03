@@ -64,7 +64,7 @@ const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {
   const renderLogo = () => {
     return LogoNavBarTransition.map(({ item, key, props }) =>
       item ? (
-        <animated.div style={props}>
+        <animated.div key={key} style={props}>
           <Img
             alt="Logo Light"
             title="Logo Light"
@@ -72,7 +72,7 @@ const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {
           />
         </animated.div>
       ) : (
-        <animated.div style={props}>
+        <animated.div key={key} style={props}>
           <Img
             alt="Logo Dark"
             title="Logo Dark"

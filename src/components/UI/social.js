@@ -74,6 +74,7 @@ const StyledLink = styled.a`
   @media ${props => props.theme.mediaQueries.small} {
     width: 3.5rem;
     height: 3.5rem;
+    margin: 0 1rem;
     border: 1px solid var(--primary-light);
   }
 `;

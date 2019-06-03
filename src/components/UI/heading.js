@@ -27,12 +27,8 @@ const Title = styled.h1`
     font-size: 2rem;
   }
 
-  @media ${props => props.theme.mediaQueries.smaller} {
-    font-size: 1.8rem;
-  }
-
   @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -51,15 +47,15 @@ const SubTitle = styled.h2`
   }
 
   @media ${props => props.theme.mediaQueries.small} {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   @media ${props => props.theme.mediaQueries.smaller} {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 
   @media ${props => props.theme.mediaQueries.smallest} {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 `;
 

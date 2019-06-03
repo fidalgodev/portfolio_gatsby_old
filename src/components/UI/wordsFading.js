@@ -6,7 +6,6 @@ const WORDS = [
   { id: 0, text: 'self-taught' },
   { id: 1, text: 'committed' },
   { id: 2, text: 'passionate' },
-  { id: 3, text: 'curious' },
 ];
 
 const Wrapper = styled.div`
@@ -25,19 +24,19 @@ const Wrapper = styled.div`
   }
 
   @media ${props => props.theme.mediaQueries.large} {
-    width: 100px;
+    width: 105px;
   }
 
   @media ${props => props.theme.mediaQueries.medium} {
-    width: 95px;
+    width: 100px;
   }
 
   @media ${props => props.theme.mediaQueries.small} {
-    width: 90px;
+    width: 95px;
   }
 
   @media ${props => props.theme.mediaQueries.smallest} {
-    width: 85px;
+    width: 90px;
   }
 `;
 

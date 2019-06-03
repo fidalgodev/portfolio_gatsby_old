@@ -38,10 +38,10 @@ const ScrollDown = () => {
     config: config.wobbly,
     delay: 500,
     opacity: 1,
-    transform: 'translateY(0px)',
+    transform: 'translate(-50%, 0px)',
     from: {
       opacity: 0,
-      transform: 'translateY(40px)',
+      transform: 'translate(-50%, 40px)',
     },
   });
   return (

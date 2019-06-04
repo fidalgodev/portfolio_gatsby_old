@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useEffect } from 'react';
 
 export const Contained = styled.div`
   max-width: 124rem;

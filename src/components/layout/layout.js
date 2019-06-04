@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import GlobalStyles from '../../utils/styles/global';
 import theme from '../../utils/styles/theme';
+import SEO from '../utils/seo';
 
 import Navbar from '../navigation/navbar';
 
@@ -44,6 +45,7 @@ const Layout = ({ notOnePageSection, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
+        <SEO />
         <Navbar notOnePageSection={notOnePageSection} />
         <StyledMain>{children}</StyledMain>
         <GlobalStyles />

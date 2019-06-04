@@ -18,6 +18,7 @@ const StyledLink = styled(Link)`
 const GatsbyStyledLink = styled(GatsbyLink)`
   cursor: pointer;
   display: flex;
+  align-items: center;
 `;
 
 const LogoNavBar = ({ notOnePageSection, setMenuOpened }) => {

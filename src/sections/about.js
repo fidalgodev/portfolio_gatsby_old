@@ -2,7 +2,7 @@ import React from 'react';
 import rehypeReact from 'rehype-react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faFile } from '@fortawesome/free-solid-svg-icons';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import ScrollLink from '../components/utils/scrollLink';
@@ -118,6 +118,23 @@ const StyledIcon = styled(FontAwesomeIcon)`
   margin-right: 0.5rem;
 `;
 
+const ButtonsWrapper = styled.div`
+  display: flex;
+
+  & a:first-of-type {
+    margin-right: 3rem;
+  }
+
+  @media ${props => props.theme.mediaQueries.medium} {
+    justify-content: space-around;
+    width: 100%;
+
+    & a:first-of-type {
+      margin-right: 0rem;
+    }
+  }
+`;
+
 // Takes custom components from markdown, and maps to my custom components
 const renderCustom = new rehypeReact({
   createElement: React.createElement,
@@ -132,6 +149,7 @@ const About = () => {
           frontmatter {
             stack
             curriculum
+            creativeCurriculum
           }
           htmlAst
         }
@@ -160,17 +178,29 @@ const About = () => {
             </StackTitle>
             <Stack>{aboutMe.childMarkdownRemark.frontmatter.stack}</Stack>
           </AboutText>
-          <ButtonLink
-            solid
-            target="_blank"
-            rel="noreferrer"
-            href={`${siteUrl.siteMetadata.siteUrl}/${
-              aboutMe.childMarkdownRemark.frontmatter.curriculum
-            }`}
-          >
-            <StyledIcon icon={faPaperPlane} />
-            Curriculum
-          </ButtonLink>
+          <ButtonsWrapper>
+            <ButtonLink
+              solid
+              target="_blank"
+              rel="noreferrer"
+              href={`${siteUrl.siteMetadata.siteUrl}/${
+                aboutMe.childMarkdownRemark.frontmatter.creativeCurriculum
+              }`}
+            >
+              <StyledIcon icon={faPaperPlane} />
+              Resume
+            </ButtonLink>
+            <ButtonLink
+              target="_blank"
+              rel="noreferrer"
+              href={`${siteUrl.siteMetadata.siteUrl}/${
+                aboutMe.childMarkdownRemark.frontmatter.curriculum
+              }`}
+            >
+              <StyledIcon icon={faFile} />
+              Curriculum
+            </ButtonLink>
+          </ButtonsWrapper>
         </Wrapper>
       </Contained>
     </StyledSection>

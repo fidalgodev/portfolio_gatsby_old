@@ -8,7 +8,7 @@ module.exports = {
       twitter: 'fidalgodev',
       instagram: 'fidalgodev',
       linkedin: 'fidalgodev',
-      youtube: 'UC8pnh6gmhMP-hyQ6MJb414g',
+      youtube: 'Fidalgodev',
       facebook: 'fidalgodev',
       github: 'fidalgodev',
       email: 'hello@fidalgo.dev',
@@ -18,14 +18,11 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        // your google analytics tracking id
-        trackingId: `UA-141189217-1`,
-        // Puts tracking script in the head instead of the body
+        trackingId: 'UA-141189217-1D',
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
-        // enable ip anonymization
-        anonymize: true,
       },
     },
     `gatsby-plugin-use-dark-mode`,

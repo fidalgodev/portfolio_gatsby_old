@@ -1,6 +1,7 @@
 ---
 stack: 'HTML5 - CSS3 - JAVASCRIPT - SASS - WEBPACK - REACTJS - REDUX - STYLED COMPONENTS - CSS MODULES - FIREBASE - BABEL - GRAPHQL - GATSBY'
 curriculum: 'curriculum.pdf'
+creativeCurriculum: 'resume.pdf'
 ---
 
 I’m <span>Fidalgo</span> , a 23 years old self-taught <span>Front-end</span> developer , from <span>Portugal</span> .

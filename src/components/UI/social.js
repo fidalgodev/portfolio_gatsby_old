@@ -154,9 +154,7 @@ const Social = () => {
           rel="noreferrer"
           target="_blank"
           aria-label="Youtube"
-          href={`https://www.youtube.com/channel/${
-            site.siteMetadata.social.youtube
-          }`}
+          href={`https://www.youtube.com/c/${site.siteMetadata.social.youtube}`}
         >
           <StyledIcon icon={faYoutube} />
         </StyledLink>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { animated, useSpring, config } from 'react-spring';
 
-import { Contained } from '../../layouts/elements';
+import { Contained } from '../layout/elements';
 import DesktopMenu from './desktopMenu';
 import MobileMenu from './mobileMenu/mobileMenu';
 import LogoNavbar from '../../components/UI/logoNavbar';
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Navbar = React.memo(() => {
+const Navbar = ({ notOnePageSection }) => {
   const [isMobile, setisMobile] = useState(null);
   const [menuOpened, setMenuOpened] = useState(false);
 
@@ -68,17 +68,24 @@ const Navbar = React.memo(() => {
     <StyledHeader style={NavBarSpring}>
       <Contained>
         <Wrapper isMobile={isMobile}>
-          <LogoNavbar setMenuOpened={() => setMenuOpened(false)} />
+          <LogoNavbar
+            notOnePageSection={notOnePageSection}
+            setMenuOpened={setMenuOpened}
+          />
           {isMobile ? (
-            <MobileMenu menuOpened={menuOpened} setMenuOpened={setMenuOpened} />
+            <MobileMenu
+              notOnePageSection={notOnePageSection}
+              menuOpened={menuOpened}
+              setMenuOpened={setMenuOpened}
+            />
           ) : (
-            <DesktopMenu />
+            <DesktopMenu notOnePageSection={notOnePageSection} />
           )}
         </Wrapper>
       </Contained>
     </StyledHeader>
   );
-});
+};
 
 Navbar.propTypes = {
   siteTitle: PropTypes.string,

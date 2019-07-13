@@ -4,7 +4,7 @@ import { useTransition, config } from 'react-spring';
 import HamburgerToggler from './hamburgerToggle';
 import SideDrawer from './sideDrawer';
 
-const MobileMenu = ({ menuOpened, setMenuOpened }) => {
+const MobileMenu = ({ notOnePageSection, menuOpened, setMenuOpened }) => {
   // Animation for the side drawer
   const SideDrawerTransition = useTransition(menuOpened, null, {
     config: config.stiff,
@@ -13,7 +13,7 @@ const MobileMenu = ({ menuOpened, setMenuOpened }) => {
     leave: { opacity: 0, transform: 'translateX(50%)' },
   });
   // If on 404 page, dont render menu, because menu links are from react-scroll, won't work there. Logo is prepared to be clicked and will work
-  return (
+  return notOnePageSection ? null : (
     <>
       <HamburgerToggler
         menuOpened={menuOpened}

@@ -7,7 +7,7 @@ import { animated } from 'react-spring';
 
 const StyledWrapper = styled(animated.div)`
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;

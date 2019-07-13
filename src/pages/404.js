@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { StyledSection } from '../layouts/elements';
+import Layout from '../components/layout/layout';
+import {
+  StyledSection,
+  Contained,
+  Wrapper,
+} from '../components/layout/elements';
 import Heading from '../components/UI/heading';
 import NotFoundSVG from '../images/not_found.svg';
 
@@ -51,14 +56,20 @@ const Svg = styled.img`
 `;
 
 const NotFoundPage = () => (
-  <StyledSection fullHeight>
-    <Heading
-      title="Page not found"
-      subtitle="<span>Uppps!</span> This page <span>doesn't</span> exist"
-    />
-    <Svg src={NotFoundSVG} alt="404 Page not found" />
-    <StyledLink to="/">Go home</StyledLink>
-  </StyledSection>
+  <Layout notOnePageSection>
+    <StyledSection fullHeight>
+      <Contained>
+        <Wrapper>
+          <Heading
+            title="Page not found"
+            subtitle="<span>Uppps!</span> This page <span>doesn't</span> exist"
+          />
+          <Svg src={NotFoundSVG} alt="404 Page not found" />
+          <StyledLink to="/">Go home</StyledLink>
+        </Wrapper>
+      </Contained>
+    </StyledSection>
+  </Layout>
 );
 
 export default NotFoundPage;

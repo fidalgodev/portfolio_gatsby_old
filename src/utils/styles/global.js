@@ -54,7 +54,6 @@ export default createGlobalStyle`
       --white: #fff;
       --shadow-btn: rgba(7, 49, 69, .1);
       --shadow-color: rgba(0, 0, 0, 0.1);
-      --shadow-colorDark: rgba(0, 0, 0, 0.25);
       background-color: var(--background);
 
       &.light-mode {

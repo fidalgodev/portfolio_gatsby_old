@@ -4,7 +4,11 @@ import { useTrail, animated, config } from 'react-spring';
 
 import NavItem from './navItem/navItem';
 
-const LINKS = ['About me', 'Portfolio', 'Contact'];
+const LINKS = [
+  { name: 'Setup', to: '/' },
+  { name: 'FAQ', to: '/faq' },
+  { name: 'Recommendations', to: '/recommendations' },
+];
 
 const StyledNav = styled.nav`
   display: flex;
@@ -35,10 +39,12 @@ const NavItems = ({ mobile, clicked }) => {
   });
 
   return (
-    <StyledNav mobile={mobile}>
+    <StyledNav mobile={mobile ? 1 : 0}>
       {navItemsTrail.map((propStyles, index) => (
-        <animated.div key={LINKS[index]} style={propStyles}>
-          <NavItem key={LINKS[index]} link={LINKS[index]} clicked={clicked} />
+        <animated.div key={LINKS[index].name} style={propStyles}>
+          <NavItem to={LINKS[index].to} clicked={clicked}>
+            {LINKS[index].name}
+          </NavItem>
         </animated.div>
       ))}
     </StyledNav>

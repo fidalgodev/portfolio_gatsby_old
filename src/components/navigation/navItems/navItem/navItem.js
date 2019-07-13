@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
+import { Link } from 'gatsby';
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -17,23 +17,19 @@ const StyledLink = styled(Link)`
     color: var(--primary);
   }
 
+  &.active {
+    color: var(--primary);
+  }
+
   @media ${({ theme }) => theme.mediaQueries.small} {
     margin: 1rem 0;
     font-size: 1.6rem;
   }
 `;
 
-const NavItem = ({ link, clicked }) => (
-  <StyledLink
-    onClick={clicked}
-    to={`${link
-      .split(' ')
-      .join('-')
-      .toLowerCase()}`}
-    spy={true}
-    smooth={true}
-  >
-    {link}
+const NavItem = ({ children, clicked, ...rest }) => (
+  <StyledLink activeClassName="active" onClick={clicked} {...rest}>
+    {children}
   </StyledLink>
 );
 

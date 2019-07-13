@@ -192,7 +192,7 @@ const darkModeToggle = ({ mobile }) => {
     from: { opacity: 0 },
   });
   return (
-    <Wrapper style={darkModeToggleSpring} mobile={mobile}>
+    <Wrapper style={darkModeToggleSpring} mobile={mobile ? 1 : 0}>
       <input
         type="checkbox"
         id="dn"

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Fidalgo | Front-end Developer`,
-    description: `I’m Fidalgo, a 23 years old self-taught Front-end developer, from Portugal.`,
+    title: `Fidalgo | Setup, FAQ, Course Recommendations and more...`,
+    description: `Here you'll find all the information about my setup, everything about me, and also resource recommendations.`,
     author: `Fidalgo`,
     siteUrl: 'https://fidalgodev.com',
     social: {
@@ -17,6 +17,7 @@ module.exports = {
     imageShare: `share.jpg`,
   },
   plugins: [
+    `gatsby-plugin-layout`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-## [Check it live here](https://fidalgodev.com/)
+## [Check it live here](https://fidalgo.dev/)
 
 ![Thumbnail](thumbnail.png)
 

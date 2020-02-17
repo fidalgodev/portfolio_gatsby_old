@@ -1,6 +1,6 @@
 ---
 title: 'Fidalgo Portfolio'
-live: 'https://fidalgodev.com/'
+live: 'https://fidalgo.dev/'
 source: 'https://github.com/fidalgodev/portfolio_gatsby'
 stack: 'React - Styled Components - Gatsby'
 image: 'fidalgo.png'

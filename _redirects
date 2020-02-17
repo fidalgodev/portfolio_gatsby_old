@@ -1,6 +1,4 @@
-# Redirect domain aliases to primary domain
-https://fidalgo.dev/* https://fidalgodev.com/:splat 301!
-https://www.fidalgo.dev/* https://fidalgodev.com/:splat 301!
+# These rules will change if you change your site’s custom domains or HTTPS settings
 
-# Optional: Redirect default Netlify subdomain to primary domain
-https://fidalgo-portfolio.netlify.com/* https://fidalgodev.com/:splat 301!
+# Redirect default Netlify subdomain to primary domain
+https://fidalgo-portfolio.netlify.com/* https://fidalgo.dev/:splat 301!
